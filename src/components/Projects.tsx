@@ -139,22 +139,22 @@ const Projects = () => {
       link: "https://howling-chicken.vercel.app/",
       // github: "https://github.com/yourusername/howlin"
     },
-    // {
-    //   title: "Rahla",
-    //   description:
-    //     "A clean, minimal chauffeur booking platform for Saudi Arabia. Features point-to-point and hourly rides, airport transfers, and intercity trips. Built with live distance/duration calculations, dynamic pricing with surcharges and discounts, and Polar checkout integration. Mobile-first design with tasteful animations and consistent UI.",
-    //   tech: [
-    //     "React",
-    //     "TypeScript",
-    //     "React Router v7",
-    //     "Convex",
-    //     "Clerk",
-    //     "Tailwindcss",
-    //     "Vercel",
-    //   ],
-    //   image: carRideImage,
-    //   link: "https://car-ride-five.vercel.app/",
-    // },
+    {
+      title: "Rahla",
+      description:
+        "A clean, minimal chauffeur booking platform for Saudi Arabia. Features point-to-point and hourly rides, airport transfers, and intercity trips. Built with live distance/duration calculations, dynamic pricing with surcharges and discounts, and Polar checkout integration. Mobile-first design with tasteful animations and consistent UI.",
+      tech: [
+        "React",
+        "TypeScript",
+        "React Router v7",
+        "Convex",
+        "Clerk",
+        "Tailwindcss",
+        "Vercel",
+      ],
+      image: carRideImage,
+      link: "https://car-ride-zeta.vercel.app/",
+    },
   ];
 
   return (
