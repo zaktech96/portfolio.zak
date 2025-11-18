@@ -1,5 +1,7 @@
 import quranImage from "./quran.png";
 import airlineImage from "./airline.png";
+import howlingImage from "./howling.png";
+import nomadImage from "./nomad.png";
 // import barakahImage from "./barakah.png";
 
 const TechIcon = ({ name }: { name: string }) => {
@@ -37,6 +39,15 @@ const TechIcon = ({ name }: { name: string }) => {
       return <svg className="w-4 h-4" fill="#000000" viewBox="0 0 24 24">
         <path d="M24 22.525H0l12-21.05 12 21.05z" />
       </svg>
+    case 'Convex':
+      return <svg className="w-4 h-4" fill="#FFD700" viewBox="0 0 24 24">
+        <path d="M12 0L0 6v12l12 6 12-6V6L12 0zm0 2.18l9 4.5v9l-9 4.5-9-4.5v-9l9-4.5zm0 2.16L4.5 8.1v7.8L12 19.66l7.5-3.76V8.1L12 4.34z"/>
+      </svg>
+    case 'React Router':
+    case 'React Router v7':
+      return <svg className="w-4 h-4" fill="#CA4245" viewBox="0 0 24 24">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6S17.302 21.6 12 21.6 2.4 17.302 2.4 12 6.698 2.4 12 2.4z"/>
+      </svg>
     default:
       return null;
   }
@@ -45,12 +56,12 @@ const TechIcon = ({ name }: { name: string }) => {
 const Projects = () => {
   const projects = [
     {
-      title: "Job Board",
-      description: "A full-stack application built with typescript, Nextjs,supabase tailwindcss clerk auth and stripe payment to allow users to find and apply to jobs" ,
-      tech: ["React", "TypeScript", "Nextjs", "Supabase", "Tailwindcss", "Clerk", "Stripe"],
-      // image: barakahImage,
-      // link: "https://www.barakahboard.pro/",
-      // github: "https://github.com/code-and-creed/barakah-board"
+      title: "NomadSearch",
+      description: "A modern, production-ready SaaS application built with React Router v7, Convex, Clerk, and Polar.sh. Features real-time database, authentication, subscription management, AI chat integration, and email notifications. Ready for Vercel deployment with built-in error tracking.",
+      tech: ["React", "TypeScript", "React Router v7", "Convex", "Clerk", "Tailwindcss", "Vercel"],
+      image: nomadImage,
+      link: "https://testing-kaizen.vercel.app/",
+      // github: "https://github.com/yourusername/nomadsearch"
     },
     {
       title: "QuranSphere",
@@ -67,6 +78,22 @@ const Projects = () => {
       image: airlineImage,
       link: "https://airline-discount-tracker-kh1r.vercel.app/",
       github: "https://github.com/zaktech96/airline-discount-tracker"
+    },
+    {
+      title: "Howlin",
+      description: "A modern restaurant website for Howlin Fried Chicken, bringing authentic Nashville hot chicken to Birmingham. Built with Kaizen - a production-ready SaaS starter template featuring React Router v7, Convex, Clerk, and Polar.sh for a full-stack experience.",
+      tech: ["React", "TypeScript", "React Router v7", "Convex", "Clerk", "Tailwindcss", "Vercel"],
+      image: howlingImage,
+      link: "https://howling-chicken.vercel.app/",
+      // github: "https://github.com/yourusername/howlin"
+    },
+    {
+      title: "Rahla",
+      description: "A clean, minimal chauffeur booking platform for Saudi Arabia. Features point-to-point and hourly rides, airport transfers, and intercity trips. Built with live distance/duration calculations, dynamic pricing with surcharges and discounts, and Polar checkout integration. Mobile-first design with tasteful animations and consistent UI.",
+      tech: ["React", "TypeScript", "React Router v7", "Convex", "Clerk", "Tailwindcss", "Vercel"],
+      // image: rahlaImage, // Add image later if available
+      // link: "https://rahla.vercel.app/",
+      // github: "https://github.com/yourusername/rahla"
     }
   ]
 
@@ -100,62 +127,70 @@ const Projects = () => {
               className="group relative bg-card/30 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
             >
               {/* Project Image with Overlay */}
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <img 
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Hover Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="flex items-center gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-card/60 hover:bg-card/80 dark:bg-gray-700/80 dark:hover:bg-gray-600/90 
-                                 border border-primary/20 hover:border-primary/40 transition-all duration-300"
-                      aria-label="View Source Code"
-                    >
-                      <svg
-                        className="w-5 h-5 text-foreground/90 dark:text-white hover:text-primary 
-                                   dark:hover:text-white/90 group-hover:scale-110 transition-all duration-300"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        strokeWidth="0.5"
-                      >
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                      </svg>
-                    </a>
+              {project.image && (
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Hover Links */}
+                  {(project.github || project.link) && (
+                    <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="flex items-center gap-4">
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-full bg-card/60 hover:bg-card/80 dark:bg-gray-700/80 dark:hover:bg-gray-600/90 
+                                       border border-primary/20 hover:border-primary/40 transition-all duration-300"
+                            aria-label="View Source Code"
+                          >
+                            <svg
+                              className="w-5 h-5 text-foreground/90 dark:text-white hover:text-primary 
+                                         dark:hover:text-white/90 group-hover:scale-110 transition-all duration-300"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              strokeWidth="0.5"
+                            >
+                              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                          </a>
+                        )}
 
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-card/60 hover:bg-card/80 dark:bg-gray-700/80 dark:hover:bg-gray-600/90 
-                                 border border-primary/20 hover:border-primary/40 transition-all duration-300"
-                      aria-label="View Live Demo"
-                    >
-                      <svg
-                        className="w-5 h-5 text-foreground/90 dark:text-white hover:text-primary 
-                                   dark:hover:text-white/90 group-hover:scale-110 transition-all duration-300"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                      </svg>
-                    </a>
-                  </div>
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-full bg-card/60 hover:bg-card/80 dark:bg-gray-700/80 dark:hover:bg-gray-600/90 
+                                       border border-primary/20 hover:border-primary/40 transition-all duration-300"
+                            aria-label="View Live Demo"
+                          >
+                            <svg
+                              className="w-5 h-5 text-foreground/90 dark:text-white hover:text-primary 
+                                         dark:hover:text-white/90 group-hover:scale-110 transition-all duration-300"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                              <polyline points="15 3 21 3 21 9" />
+                              <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
+              )}
               
               {/* Content */}
               <div className="p-8">
@@ -178,6 +213,55 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
+                  
+                  {/* Links when no image */}
+                  {!project.image && (project.github || project.link) && (
+                    <div className="flex items-center gap-4 pt-4">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 rounded-lg text-sm font-medium transition-all duration-300"
+                          aria-label="View Source Code"
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            strokeWidth="0.5"
+                          >
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                          </svg>
+                          GitHub
+                        </a>
+                      )}
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 rounded-lg text-sm font-medium transition-all duration-300"
+                          aria-label="View Live Demo"
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                          </svg>
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
