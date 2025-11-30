@@ -180,6 +180,7 @@ const Projects = () => {
       ],
       image: howlingImage,
       link: "https://howling-chicken.vercel.app/",
+      github: "https://github.com/zaktech96/howling-chicken",
       // github: "https://github.com/yourusername/howlin"
     },
     {
@@ -196,7 +197,8 @@ const Projects = () => {
         "Vercel",
       ],
       image: carRideImage,
-      link: "https://car-ride-zeta.vercel.app/",
+      link: "https://car-ride-project.vercel.app/",
+      github: "https://github.com/zaktech96/car-ride-project",
     },
   ];
 
