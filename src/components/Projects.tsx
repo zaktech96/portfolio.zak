@@ -3,6 +3,7 @@ import airlineImage from "./airline.png";
 import howlingImage from "./howling.png";
 import nomadImage from "./nomad.png";
 import carRideImage from "./car-ride.png";
+import muslimTravelGuideImage from "./muslim-travel-guide.png";
 // import barakahImage from "./barakah.png";
 
 const TechIcon = ({ name }: { name: string }) => {
@@ -199,6 +200,20 @@ const Projects = () => {
       image: carRideImage,
       link: "https://car-ride-project.vercel.app/",
       github: "https://github.com/zaktech96/car-ride-project",
+    },
+    {
+      title: "Muslim Travel Guide",
+      description:
+        "Your Islamic travel companion. Stay connected to your faith anywhere in the world. Features accurate prayer times for 50,000+ cities, instant Qibla direction, halal food finder, mosque locator, and community features to connect with fellow Muslim travelers.",
+      tech: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwindcss",
+      ],
+      image: muslimTravelGuideImage,
+      link: "https://muslim-travel-guide-wxja.vercel.app/",
+      github: "https://github.com/zaktech96/muslim-travel-guide",
     },
   ];
 
