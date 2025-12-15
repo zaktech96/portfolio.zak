@@ -4,6 +4,7 @@ import howlingImage from "./howling.png";
 import nomadImage from "./nomad.png";
 import carRideImage from "./car-ride.png";
 import muslimTravelGuideImage from "./muslim-travel-guide.png";
+import visionboardImage from "./visionboard.png";
 // import barakahImage from "./barakah.png";
 
 const TechIcon = ({ name }: { name: string }) => {
@@ -218,6 +219,22 @@ const Projects = () => {
       image: muslimTravelGuideImage,
       link: "https://muslim-travel-guide-wxja.vercel.app/",
       github: "https://github.com/zaktech96/muslim-travel-guide",
+    },
+    {
+      title: "VisionBoard",
+      description:
+        "A modern digital vision board platform that turns abstract dreams into visual roadmaps. Features smart templates, interactive drag-and-drop creation, goal-based categories, and a fully responsive dark/light experience for planning your future on any device.",
+      tech: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwindcss",
+        "Framer Motion",
+        "Vercel",
+      ],
+      image: visionboardImage,
+      link: "https://vision-board-chi.vercel.app/",
+      // github: "https://github.com/zaktech96/vision-board", // add when public
     },
   ];
 
