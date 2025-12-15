@@ -88,8 +88,12 @@ const Hero = () => {
         <div className="absolute bottom-20 right-20 w-72 h-72 bg-green-600/30 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
       
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-        <div className="space-y-8 pt-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div
+          className="space-y-8 pt-24 rounded-3xl bg-card/40 border border-white/5 
+                     dark:border-white/10 backdrop-blur-2xl shadow-[0_0_80px_rgba(16,185,129,0.25)] 
+                     px-6 sm:px-10 py-10 sm:py-14"
+        >
           <GooeyText 
             texts={[
               "Hi, I'm Zakariye",
