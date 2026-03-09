@@ -5,6 +5,7 @@ import nomadImage from "./nomad.png";
 import carRideImage from "./car-ride.png";
 import muslimTravelGuideImage from "./muslim-travel-guide.png";
 import visionboardImage from "./visionboard.png";
+import moncuresImage from "./moncures.png";
 // import barakahImage from "./barakah.png";
 
 const TechIcon = ({ name }: { name: string }) => {
@@ -132,6 +133,22 @@ const TechIcon = ({ name }: { name: string }) => {
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Moncures Beard Oil",
+      description:
+        "A premium e-commerce platform for men's grooming essentials. Dense nourishment, zero shine, built for disciplined grooming. Features real-time database, secure Stripe payments, user authentication, and a dark-themed responsive design with smooth animations.",
+      tech: [
+        "React",
+        "TypeScript",
+        "React Router v7",
+        "Convex",
+        "Clerk",
+        "Stripe",
+        "Tailwindcss",
+      ],
+      image: moncuresImage,
+      link: "https://moncures.com",
+    },
     {
       title: "NomadSearch",
       description:
