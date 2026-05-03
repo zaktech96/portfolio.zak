@@ -125,7 +125,7 @@ const principles = [
   },
   {
     title: 'Built to evolve',
-    detail: 'Components and data shapes should make the next feature easier, not harder.',
+    detail: 'Strong ownership means leaving the product easier to improve after each change.',
     icon: 'workflow' as IconName,
   },
 ]
@@ -158,7 +158,8 @@ const Capabilities = () => {
             <p className="mt-5 text-lg leading-8 text-foreground/62">
               A portfolio should show taste, but the work underneath needs structure. My strongest
               projects combine polished UI with real flows: accounts, payments, content, stock,
-              search, email, and admin control.
+              search, email, and admin control. I enjoy stepping in early, finding what will move the
+              product forward, and leading that change through to something shipped.
             </p>
 
             <div className="mt-8 rounded-2xl border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur">
@@ -166,8 +167,8 @@ const Capabilities = () => {
                 <div>
                   <p className="text-sm font-semibold text-foreground">Current focus</p>
                   <p className="mt-2 text-sm leading-6 text-foreground/60">
-                    Building sharper client-ready products with stronger design systems, better
-                    mobile behavior, and cleaner backend workflows.
+                    Building sharper client-ready products, taking more ownership of direction, and
+                    making changes that are visible in both user experience and business impact.
                   </p>
                 </div>
                 <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">

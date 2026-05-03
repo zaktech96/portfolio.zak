@@ -50,7 +50,7 @@ const Hero = () => {
               I turn product ideas into sharp, working web apps.
             </h1>
             <p className="mx-auto max-w-2xl text-pretty text-lg leading-8 text-foreground/68 sm:text-xl">
-              I care about the full journey: the first impression, the admin workflow, the checkout, the database, and the small details that make a product feel trustworthy.
+              My driving factor is taking the lead where ideas need momentum: shaping the user journey, making clear decisions, and building changes that create visible impact.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ const Hero = () => {
             {[
               ['Live', 'E-commerce and SaaS builds'],
               ['End-to-end', 'UI, auth, payments, data'],
-              ['Polished', 'Responsive product interfaces'],
+              ['Lead', 'Impact-focused product changes'],
             ].map(([value, label]) => (
               <div key={label} className="rounded-xl border border-border/70 bg-card/45 p-4 shadow-sm backdrop-blur">
                 <div className="text-2xl font-semibold text-foreground">{value}</div>

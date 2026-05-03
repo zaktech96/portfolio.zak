@@ -130,13 +130,14 @@ const About = () => {
             <p className="text-lg leading-8 text-foreground/78">
               I'm Zakariye, a full stack developer focused on turning practical ideas into polished,
               usable products. I like working close to the problem: understanding what the user needs,
-              shaping the flow, then building the interface and backend that make it real.
+              shaping the flow, then taking the lead on the interface and backend that make it real.
             </p>
             <p className="mt-5 text-lg leading-8 text-foreground/68">
               My recent work spans live commerce, SaaS-style dashboards, travel tools, content
               platforms, authentication, payments, real-time data, and responsive interfaces. I care
-              about clean code, but I care just as much about whether the thing feels clear, fast,
-              and reliable to the person using it.
+              about clean code, but I care just as much about whether the work creates impact:
+              clearer flows, stronger trust, faster decisions, and real improvements for the person
+              using it.
             </p>
 
             {/* Stats */}
@@ -144,8 +145,8 @@ const About = () => {
               {[
                 { label: 'Projects Completed', value: '10+' },
                 { label: 'Years Building', value: '2+' },
-                { label: 'Live Product Focus', value: 'Full-stack' },
-                { label: 'Core Standard', value: 'Polish' }
+                { label: 'Ownership Style', value: 'Lead' },
+                { label: 'Core Standard', value: 'Impact' }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
