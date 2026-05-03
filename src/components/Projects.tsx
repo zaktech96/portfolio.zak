@@ -177,13 +177,13 @@ const Projects = () => {
       github: "https://github.com/zaktech96/Quran-player-app",
     },
     {
-      title: "Airline tracker",
+      title: "Discount Flight Tracker",
       description:
-        "A modern flight search application that helps users find the best deals on flights. Built with real-time flight data integration and a modern UI",
+        "A modern flight deal tracker for finding discounted routes with a focused, responsive search experience. Built with a clean React and TypeScript interface, fast filtering, and a polished travel-focused UI for comparing flight opportunities.",
       tech: ["React", "TypeScript", "Nextjs", "Tailwindcss"],
       image: airlineImage,
-      link: "https://airline-discount-tracker-kh1r.vercel.app/",
-      github: "https://github.com/zaktech96/airline-discount-tracker",
+      link: "https://discount-flight-tracker.vercel.app/",
+      github: "https://github.com/zaktech96/discount-flight-tracker",
     },
     {
       title: "Howlin",
