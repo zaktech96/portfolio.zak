@@ -3,24 +3,41 @@ import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme()
+  const links = [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
+  ]
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-foreground gradient-text">Zakariye</span>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex items-baseline space-x-8">
-              <a href="#home" className="nav-link">Home</a>
-              <a href="#about" className="nav-link">About</a>
-              <a href="#projects" className="nav-link">Projects</a>
-              <a href="#contact" className="nav-link">Contact</a>
+        <div className="flex h-16 items-center justify-between gap-4">
+          <a href="#home" className="flex items-center gap-3" aria-label="Zakariye home">
+            <span className="grid h-9 w-9 place-items-center rounded-lg border border-primary/20 bg-primary/10 text-sm font-bold text-primary">
+              ZS
+            </span>
+            <span className="hidden text-sm font-semibold tracking-wide text-foreground sm:block">
+              Zakariye Sahid
+            </span>
+          </a>
+
+          <div className="flex items-center gap-2">
+            <div className="hidden items-center rounded-full border border-border/70 bg-card/50 p-1 shadow-sm md:flex">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full px-4 py-2 text-sm font-medium text-foreground/65 transition-colors hover:bg-primary/10 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-muted text-foreground/80 hover:text-foreground transition-colors duration-300"
+              className="grid h-10 w-10 place-items-center rounded-full border border-border/70 bg-card/60 text-foreground/70 shadow-sm transition-colors hover:bg-primary/10 hover:text-foreground"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
@@ -36,4 +53,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar

@@ -48,15 +48,15 @@ const ResendIcon = () => (
 );
 
 const skills = [
-  { 
-    name: 'Frontend', 
+  {
+    name: 'Frontend',
     items: [
       { name: 'React', icon: <SiReact className="text-[#61DAFB]" /> },
       { name: 'Next.js', icon: <SiNextdotjs className="text-black dark:text-white" /> },
       { name: 'React Router v7', icon: <ReactRouterIcon /> },
       { name: 'TypeScript', icon: <SiTypescript className="text-[#3178C6]" /> },
-      { 
-        name: 'JavaScript', 
+      {
+        name: 'JavaScript',
         icon: <SiJavascript className="text-[#F7DF1E] bg-[#0c0c0b] rounded-sm" />,
         textClassName: "text-black dark:text-white font-semibold"
       },
@@ -64,8 +64,8 @@ const skills = [
       { name: 'Framer Motion', icon: <FramerMotionIcon /> }
     ]
   },
-  { 
-    name: 'Backend', 
+  {
+    name: 'Backend',
     items: [
       { name: 'Convex', icon: <ConvexIcon /> },
       { name: 'Clerk', icon: <ClerkIcon /> },
@@ -78,8 +78,8 @@ const skills = [
       { name: 'Resend', icon: <ResendIcon /> }
     ]
   },
-  { 
-    name: 'Tools', 
+  {
+    name: 'Tools',
     items: [
       { name: 'Git', icon: <SiGit className="text-[#F05032]" /> },
       { name: 'Docker', icon: <SiDocker className="text-[#2496ED]" /> },
@@ -88,8 +88,8 @@ const skills = [
       { name: 'Vite', icon: <SiVite className="text-[#646CFF]" /> }
     ]
   },
-  { 
-    name: 'Soft Skills', 
+  {
+    name: 'Soft Skills',
     items: [
       { name: 'Problem Solving', icon: <LightBulbIcon className="w-5 h-5 text-primary" /> },
       { name: 'Communication', icon: <ChatBubbleBottomCenterTextIcon className="w-5 h-5 text-primary" /> },
@@ -101,41 +101,45 @@ const skills = [
 
 const About = () => {
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="relative overflow-hidden py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl font-bold text-primary mb-4">About Me</h2>
-          <div className="w-24 h-1 bg-primary/20 mx-auto rounded-full" />
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">
+            About
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Product-minded engineering, from interface to backend.
+          </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-12 items-start">
           {/* About Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-6"
+            className="rounded-2xl border border-border/70 bg-card/45 p-6 shadow-sm backdrop-blur sm:p-8"
           >
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <p className="text-lg leading-8 text-foreground/78">
               I'm a passionate Full Stack Developer with a keen eye for design and a love for creating
               seamless user experiences. With years of experience in web development, I specialise in
               building modern, responsive, and scalable applications.
             </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <p className="mt-5 text-lg leading-8 text-foreground/68">
               My journey in tech started with curiosity and has evolved into a career focused on
               solving complex problems through elegant solutions. I believe in writing clean,
               maintainable code and staying up-to-date with the latest technologies.
             </p>
-            
+
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-2 gap-3 mt-8">
               {[
                 { label: 'Projects Completed', value: '10+' },
                 { label: 'Years Experience', value: '2+' },
@@ -148,11 +152,10 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="bg-card/70 dark:bg-card/50 backdrop-blur-sm p-4 rounded-lg 
-                             shadow-sm hover:shadow-md transition-all"
+                  className="rounded-xl border border-border/60 bg-background/45 p-4 transition-colors hover:border-primary/25"
                 >
-                  <div className="text-2xl font-bold text-primary/90">{stat.value}</div>
-                  <div className="text-sm text-foreground/70">{stat.label}</div>
+                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
+                  <div className="mt-1 text-sm text-foreground/60">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -164,7 +167,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2"
           >
             {skills.map((category, index) => (
               <motion.div
@@ -173,10 +176,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="bg-card/70 dark:bg-card/50 backdrop-blur-sm p-6 rounded-lg 
-                           shadow-sm hover:shadow-md transition-all"
+                className="rounded-2xl border border-border/70 bg-card/45 p-5 shadow-sm backdrop-blur transition-colors hover:border-primary/25"
               >
-                <h3 className="text-lg font-semibold text-primary mb-4">{category.name}</h3>
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary/80">{category.name}</h3>
                 <div className="space-y-2">
                   {category.items.map((skill, skillIndex) => (
                     <motion.div
@@ -185,13 +187,12 @@ const About = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: 0.1 * skillIndex }}
-                      className="flex items-center gap-3 px-4 py-2 bg-primary/20 dark:bg-primary/10 rounded-lg 
-                                 hover:bg-primary/30 dark:hover:bg-primary/20 transition-colors"
+                      className="flex items-center gap-3 rounded-lg border border-border/40 bg-background/35 px-3 py-2 transition-colors hover:border-primary/20 hover:bg-primary/10"
                     >
                       <div className="w-5 h-5 flex items-center justify-center">
                         {skill.icon}
                       </div>
-                      <span className={`text-sm text-foreground/90 ${skill.textClassName || ''}`}>
+                      <span className={`text-sm text-foreground/78 ${skill.textClassName || ''}`}>
                         {skill.name}
                       </span>
                     </motion.div>
@@ -204,12 +205,11 @@ const About = () => {
       </div>
 
       {/* Background Elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent">
+        <div className="absolute left-1/2 top-10 h-px w-[min(900px,90vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
     </section>
   );
 };
 
-export default About; 
+export default About;

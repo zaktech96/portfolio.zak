@@ -5,7 +5,7 @@ import nomadImage from "./nomad.png";
 import carRideImage from "./car-ride.png";
 import muslimTravelGuideImage from "./muslim-travel-guide.png";
 import visionboardImage from "./visionboard.png";
-// import moncuresImage from "./moncures.png";
+import moncuresImage from "./moncures.png";
 // import barakahImage from "./barakah.png";
 
 const TechIcon = ({ name }: { name: string }) => {
@@ -133,22 +133,23 @@ const TechIcon = ({ name }: { name: string }) => {
 
 const Projects = () => {
   const projects = [
-    // {
-    //   title: "Moncures Beard Oil",
-    //   description:
-    //     "A premium e-commerce platform for men's grooming essentials. Dense nourishment, zero shine, built for disciplined grooming. Features real-time database, secure Stripe payments, user authentication, and a dark-themed responsive design with smooth animations.",
-    //   tech: [
-    //     "React",
-    //     "TypeScript",
-    //     "React Router v7",
-    //     "Convex",
-    //     "Clerk",
-    //     "Stripe",
-    //     "Tailwindcss",
-    //   ],
-    //   image: moncuresImage,
-    //   link: "https://moncures.com",
-    // },
+    {
+      title: "Moncures Beard Oil",
+      description:
+        "A live digital flagship for Moncures: a disciplined beard-care e-commerce platform built around dense nourishment, zero shine, and minimal daily grooming. Features React Router v7, real-time Convex data, Clerk authentication, Stripe checkout, Resend transactional emails, admin stock controls, waitlist flows, launch locking, and a responsive glass-gloss visual system.",
+      tech: [
+        "React",
+        "TypeScript",
+        "React Router v7",
+        "Convex",
+        "Clerk",
+        "Stripe",
+        "Tailwindcss",
+      ],
+      image: moncuresImage,
+      link: "https://www.moncures.co.uk",
+      github: "https://github.com/zaktech96/moncures-oil",
+    },
     {
       title: "NomadSearch",
       description:
@@ -258,17 +259,20 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 sm:py-24 lg:py-32 relative">
       {/* Decorative elements */}
-      <div className="absolute inset-0 -z-10 opacity-40 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-primary/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="absolute left-1/2 top-28 h-[520px] w-[min(980px,90vw)] -translate-x-1/2 rounded-full bg-primary/[0.045] blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="section-title inline-flex items-center gap-2 sm:gap-3 flex-wrap justify-center">
-            <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">
+            Selected Work
+          </p>
+          <h2 className="inline-flex items-center justify-center gap-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <span className="w-9 h-9 rounded-xl border border-primary/15 bg-primary/10 flex items-center justify-center">
               <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 text-primary"
+                className="w-5 h-5 text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -281,13 +285,10 @@ const Projects = () => {
                 />
               </svg>
             </span>
-            <span className="text-xl sm:text-2xl lg:text-3xl">
-              Featured Projects
-            </span>
+            Featured Projects
           </h2>
-          <p className="text-foreground/60 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-2">
-            A collection of my recent work and side projects. Each project is
-            unique and demonstrates different aspects of my skills.
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-foreground/60 sm:text-lg">
+            Recent products and side projects across e-commerce, SaaS, travel, content, and utility workflows.
           </p>
         </div>
 
@@ -295,34 +296,33 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-card/30 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/55 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_26px_80px_hsl(var(--primary)/0.10)]"
             >
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               {/* Project Image with Overlay */}
               {project.image && (
-                <div className="relative aspect-[16/9] overflow-hidden">
+                <div className="relative aspect-[16/8.5] overflow-hidden border-b border-border/60 bg-muted/40">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                   {/* Hover Links */}
                   {(project.github || project.link) && (
-                    <div className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <div className="flex items-center gap-2 sm:gap-4">
                         {project.github && (
                           <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 sm:p-2 rounded-full bg-card/60 hover:bg-card/80 dark:bg-gray-700/80 dark:hover:bg-gray-600/90 
-                                       border border-primary/20 hover:border-primary/40 transition-all duration-300"
+                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50"
                             aria-label="View Source Code"
                           >
                             <svg
-                              className="w-4 h-4 sm:w-5 sm:h-5 text-foreground/90 dark:text-white hover:text-primary 
-                                         dark:hover:text-white/90 group-hover:scale-110 transition-all duration-300"
+                              className="w-5 h-5"
                               viewBox="0 0 24 24"
                               fill="currentColor"
                               strokeWidth="0.5"
@@ -337,13 +337,11 @@ const Projects = () => {
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 sm:p-2 rounded-full bg-card/60 hover:bg-card/80 dark:bg-gray-700/80 dark:hover:bg-gray-600/90 
-                                       border border-primary/20 hover:border-primary/40 transition-all duration-300"
+                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50"
                             aria-label="View Live Demo"
                           >
                             <svg
-                              className="w-4 h-4 sm:w-5 sm:h-5 text-foreground/90 dark:text-white hover:text-primary 
-                                         dark:hover:text-white/90 group-hover:scale-110 transition-all duration-300"
+                              className="w-5 h-5"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -364,12 +362,12 @@ const Projects = () => {
               )}
 
               {/* Content */}
-              <div className="p-4 sm:p-6 lg:p-8">
+              <div className="p-5 sm:p-6 lg:p-8">
                 <div className="space-y-3 sm:space-y-4">
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-foreground/70 text-sm sm:text-base line-clamp-2 sm:line-clamp-3">
+                  <p className="text-foreground/64 text-sm leading-6 sm:text-base sm:leading-7 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -377,7 +375,7 @@ const Projects = () => {
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 bg-primary/5 border border-primary/10 text-primary rounded-full text-xs sm:text-sm font-medium"
+                        className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 bg-background/45 border border-border/60 text-foreground/72 rounded-full text-xs sm:text-sm font-medium"
                       >
                         <TechIcon name={tech} />
                         <span className="whitespace-nowrap">{tech}</span>
