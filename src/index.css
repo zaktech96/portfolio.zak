@@ -36,6 +36,7 @@
   html {
     @apply scroll-smooth antialiased;
     scroll-padding-top: 7rem;
+    background-color: hsl(var(--background));
   }
 
   body {
