@@ -101,7 +101,7 @@ const skills = [
 
 const About = () => {
   return (
-    <section id="about" className="relative overflow-hidden py-20 sm:py-28">
+    <section id="about" className="relative scroll-mt-28 overflow-hidden py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

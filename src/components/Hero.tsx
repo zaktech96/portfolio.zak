@@ -32,7 +32,7 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24">
+    <section id="home" className="relative flex min-h-screen scroll-mt-24 items-center justify-center overflow-hidden px-4 pt-32 sm:pt-28">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--border)/0.35)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.35)_1px,transparent_1px)] bg-[size:88px_88px] opacity-30" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/0.20),transparent_42%),radial-gradient(circle_at_80%_70%,hsl(210_90%_56%/0.11),transparent_34%)]" />
       <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-background to-transparent" />
@@ -55,10 +55,10 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="#projects" className="button-primary">
+            <a href="#projects" className="button-primary min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               View Work
             </a>
-            <a href="#contact" className="button-secondary">
+            <a href="#contact" className="button-secondary min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               Start a Project
             </a>
           </div>
@@ -70,7 +70,7 @@ const Hero = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="grid h-12 w-12 place-items-center rounded-full border border-border/70 bg-card/70 text-foreground/70 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
+                className="grid h-12 w-12 place-items-center rounded-full border border-border/70 bg-card/70 text-foreground/70 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 aria-label={link.name}
               >
                 {link.icon}

@@ -61,6 +61,7 @@ export function TimelineNav() {
               <span className="text-sm font-medium">{label}</span>
             </motion.div>
             <motion.button
+              aria-label={`Scroll to ${label}`}
               onClick={() => {
                 document.getElementById(id)?.scrollIntoView({
                   behavior: 'smooth',
@@ -70,7 +71,7 @@ export function TimelineNav() {
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300
                          ${activeSection === id
                            ? 'bg-primary scale-125 shadow-lg shadow-primary/30'
-                           : 'bg-foreground/20 hover:bg-foreground/40'}`}
+                           : 'bg-foreground/20 hover:bg-foreground/40'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
             />

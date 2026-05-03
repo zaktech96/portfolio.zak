@@ -6,6 +6,7 @@ import carRideImage from "./car-ride.png";
 import muslimTravelGuideImage from "./muslim-travel-guide.png";
 import visionboardImage from "./visionboard.png";
 import moncuresImage from "./moncures.png";
+import { motion, useReducedMotion } from "framer-motion";
 // import barakahImage from "./barakah.png";
 
 const TechIcon = ({ name }: { name: string }) => {
@@ -132,6 +133,7 @@ const TechIcon = ({ name }: { name: string }) => {
 };
 
 const Projects = () => {
+  const shouldReduceMotion = useReducedMotion();
   const projects = [
     {
       title: "Moncures Beard Oil",
@@ -257,7 +259,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 sm:py-24 lg:py-32 relative">
+    <section id="projects" className="py-16 sm:py-24 lg:py-32 relative scroll-mt-28">
       {/* Decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -294,10 +296,19 @@ const Projects = () => {
 
         <div className="space-y-6 sm:space-y-8">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.42, delay: Math.min(index * 0.04, 0.18), ease: "easeOut" }}
               className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/55 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_26px_80px_hsl(var(--primary)/0.10)]"
             >
+              {index === 0 && (
+                <div className="absolute right-4 top-4 z-10 rounded-full border border-primary/25 bg-background/80 px-3 py-1 text-xs font-semibold text-primary shadow-sm backdrop-blur">
+                  Live Product
+                </div>
+              )}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               {/* Project Image with Overlay */}
               {project.image && (
@@ -311,14 +322,14 @@ const Projects = () => {
 
                   {/* Hover Links */}
                   {(project.github || project.link) && (
-                    <div className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="absolute inset-0 hidden items-center justify-center gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:flex sm:gap-4">
                       <div className="flex items-center gap-2 sm:gap-4">
                         {project.github && (
                           <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50"
+                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
                             aria-label="View Source Code"
                           >
                             <svg
@@ -337,7 +348,7 @@ const Projects = () => {
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50"
+                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
                             aria-label="View Live Demo"
                           >
                             <svg
@@ -382,6 +393,52 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
+
+                  {(project.github || project.link) && (
+                    <div className="flex flex-col gap-2 pt-2 sm:hidden">
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
+                        >
+                          <svg
+                            className="h-4 w-4"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                          </svg>
+                          Live Site
+                        </a>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border/70 bg-background/45 px-4 py-2.5 text-sm font-semibold text-foreground/75 transition-colors hover:bg-primary/10 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
+                        >
+                          <svg
+                            className="h-4 w-4"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            strokeWidth="0.5"
+                          >
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                          </svg>
+                          Source Code
+                        </a>
+                      )}
+                    </div>
+                  )}
 
                   {/* Links when no image */}
                   {!project.image && (project.github || project.link) && (
@@ -433,7 +490,7 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
