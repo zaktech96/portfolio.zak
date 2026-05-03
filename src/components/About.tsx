@@ -114,7 +114,7 @@ const About = () => {
             About
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Product-minded engineering, from interface to backend.
+            I build like a developer, but think like a product owner.
           </h2>
         </motion.div>
 
@@ -128,23 +128,24 @@ const About = () => {
             className="rounded-2xl border border-border/70 bg-card/45 p-6 shadow-sm backdrop-blur sm:p-8"
           >
             <p className="text-lg leading-8 text-foreground/78">
-              I'm a passionate Full Stack Developer with a keen eye for design and a love for creating
-              seamless user experiences. With years of experience in web development, I specialise in
-              building modern, responsive, and scalable applications.
+              I'm Zakariye, a full stack developer focused on turning practical ideas into polished,
+              usable products. I like working close to the problem: understanding what the user needs,
+              shaping the flow, then building the interface and backend that make it real.
             </p>
             <p className="mt-5 text-lg leading-8 text-foreground/68">
-              My journey in tech started with curiosity and has evolved into a career focused on
-              solving complex problems through elegant solutions. I believe in writing clean,
-              maintainable code and staying up-to-date with the latest technologies.
+              My recent work spans live commerce, SaaS-style dashboards, travel tools, content
+              platforms, authentication, payments, real-time data, and responsive interfaces. I care
+              about clean code, but I care just as much about whether the thing feels clear, fast,
+              and reliable to the person using it.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-3 mt-8">
               {[
                 { label: 'Projects Completed', value: '10+' },
-                { label: 'Years Experience', value: '2+' },
-                { label: 'Technologies', value: '5+' },
-                { label: 'Communities involved in', value: '5+' }
+                { label: 'Years Building', value: '2+' },
+                { label: 'Live Product Focus', value: 'Full-stack' },
+                { label: 'Core Standard', value: 'Polish' }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

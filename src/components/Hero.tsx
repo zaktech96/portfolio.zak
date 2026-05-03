@@ -42,15 +42,15 @@ const Hero = () => {
         <div className="space-y-8">
           <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card/70 px-4 py-2 text-sm font-medium text-foreground/70 shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-primary" />
-            Full stack developer based in the UK
+            UK-based full stack developer building live products
           </div>
 
           <div className="space-y-5">
             <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              Building polished web products with practical engineering.
+              I turn product ideas into sharp, working web apps.
             </h1>
             <p className="mx-auto max-w-2xl text-pretty text-lg leading-8 text-foreground/68 sm:text-xl">
-              I design and ship responsive full-stack applications with React, TypeScript, modern backends, payments, auth, and clean product workflows.
+              I care about the full journey: the first impression, the admin workflow, the checkout, the database, and the small details that make a product feel trustworthy.
             </p>
           </div>
 
@@ -80,9 +80,9 @@ const Hero = () => {
 
           <div className="grid gap-3 pt-8 text-left sm:grid-cols-3">
             {[
-              ['10+', 'Projects shipped'],
-              ['2+', 'Years experience'],
-              ['Full-stack', 'Product delivery'],
+              ['Live', 'E-commerce and SaaS builds'],
+              ['End-to-end', 'UI, auth, payments, data'],
+              ['Polished', 'Responsive product interfaces'],
             ].map(([value, label]) => (
               <div key={label} className="rounded-xl border border-border/70 bg-card/45 p-4 shadow-sm backdrop-blur">
                 <div className="text-2xl font-semibold text-foreground">{value}</div>
