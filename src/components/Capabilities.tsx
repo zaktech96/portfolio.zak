@@ -90,19 +90,19 @@ const buildAreas = [
   {
     title: 'Full-stack Systems',
     description:
-      'Auth, databases, serverless functions, checkout flows, order handling, emails, and admin tools that hold together.',
+      'Auth, users, memberships, databases, checkout flows, order handling, emails, and admin tools that hold together.',
     icon: 'data' as IconName,
   },
   {
     title: 'Commerce Workflows',
     description:
-      'Product pages, carts, Stripe checkout, stock states, confirmation flows, and customer-facing polish.',
+      'Stripe checkout, live stock decreases, price controls, refunds, confirmation flows, and customer-facing polish.',
     icon: 'card' as IconName,
   },
   {
     title: 'Operational Dashboards',
     description:
-      'Admin panels, content management, tracking views, filters, tables, and actions with clear feedback.',
+      'Admin panels for orders, Royal Mail fulfilment, tracking details, filters, tables, and actions with clear feedback.',
     icon: 'dashboard' as IconName,
   },
 ]
@@ -158,8 +158,9 @@ const Capabilities = () => {
             <p className="mt-5 text-lg leading-8 text-foreground/62">
               A portfolio should show taste, but the work underneath needs structure. My strongest
               projects combine polished UI with real flows: accounts, payments, content, stock,
-              search, email, and admin control. I enjoy stepping in early, finding what will move the
-              product forward, and leading that change through to something shipped.
+              search, email, fulfilment, and admin control. Moncures is the clearest example: I built
+              the dashboard from scratch so admins can manage orders, members, stock, pricing,
+              refunds, Royal Mail tracking, and fulfilment from the website.
             </p>
 
             <div className="mt-8 rounded-2xl border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur">
@@ -168,7 +169,7 @@ const Capabilities = () => {
                   <p className="text-sm font-semibold text-foreground">Current focus</p>
                   <p className="mt-2 text-sm leading-6 text-foreground/60">
                     Building sharper client-ready products, taking more ownership of direction, and
-                    making changes that are visible in both user experience and business impact.
+                    making changes that are visible in both user experience and business operations.
                   </p>
                 </div>
                 <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">

@@ -138,7 +138,7 @@ const Projects = () => {
     {
       title: "Moncures Beard Oil",
       description:
-        "A live digital flagship for Moncures: a disciplined beard-care e-commerce platform built around dense nourishment, zero shine, and minimal daily grooming. Features React Router v7, real-time Convex data, Clerk authentication, Stripe checkout, Resend transactional emails, admin stock controls, waitlist flows, launch locking, and a responsive glass-gloss visual system.",
+        "A live digital flagship and full backend dashboard for Moncures. Built from scratch with orders, membership users, admin order management, Royal Mail API fulfilment, live stock decreases when orders are placed, price controls, one-click refund processing, shipment tracking inputs, waitlist flows, launch locking, and a responsive glass-gloss storefront.",
       tech: [
         "React",
         "TypeScript",
