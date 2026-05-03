@@ -1,5 +1,5 @@
 import quranImage from "./quran.png";
-import airlineImage from "./airline.png";
+import discountFlightTrackerImage from "./discount-flight-tracker.svg";
 import howlingImage from "./howling.png";
 import nomadImage from "./nomad.png";
 import carRideImage from "./car-ride.png";
@@ -183,7 +183,7 @@ const Projects = () => {
       description:
         "A modern flight deal tracker for finding discounted routes with a focused, responsive search experience. Built with a clean React and TypeScript interface, fast filtering, and a polished travel-focused UI for comparing flight opportunities.",
       tech: ["React", "TypeScript", "Nextjs", "Tailwindcss"],
-      image: airlineImage,
+      image: discountFlightTrackerImage,
       link: "https://discount-flight-tracker.vercel.app/",
       github: "https://github.com/zaktech96/discount-flight-tracker",
     },
