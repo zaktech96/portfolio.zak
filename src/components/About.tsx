@@ -154,10 +154,10 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="rounded-xl border border-border/60 bg-background/45 p-4 transition-colors hover:border-primary/25"
+                  className="group rounded-xl border border-border/60 bg-background/45 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-background/65"
                 >
-                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                  <div className="mt-1 text-sm text-foreground/60">{stat.label}</div>
+                  <div className="text-2xl font-bold text-gradient-primary">{stat.value}</div>
+                  <div className="mt-1 text-sm text-foreground/60 transition-colors group-hover:text-foreground/75">{stat.label}</div>
                 </motion.div>
               ))}
             </div>

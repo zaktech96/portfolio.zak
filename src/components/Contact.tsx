@@ -25,7 +25,7 @@ const Contact = () => {
             href="https://mail.google.com/mail/?view=cm&to=zakariyesahid96@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-2xl border border-border/70 bg-card/55 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_70px_hsl(var(--primary)/0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group relative rounded-2xl border border-border/70 bg-card/55 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_70px_hsl(var(--primary)/0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <div className="flex items-center gap-4">
               <span className="p-3 rounded-xl border border-primary/15 bg-primary/10 group-hover:bg-primary/15 transition-colors duration-300">
@@ -42,13 +42,26 @@ const Contact = () => {
                 </p>
               </div>
             </div>
+            <svg
+              className="absolute right-5 top-5 h-4 w-4 -translate-x-1 text-foreground/40 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary group-hover:opacity-100"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 17 17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
           </a>
 
           <a
             href="https://www.linkedin.com/in/zakariye-sahid-855b94151/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-2xl border border-border/70 bg-card/55 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_70px_hsl(var(--primary)/0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group relative rounded-2xl border border-border/70 bg-card/55 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_70px_hsl(var(--primary)/0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <div className="flex items-center gap-4">
               <span className="p-3 rounded-xl border border-primary/15 bg-primary/10 group-hover:bg-primary/15 transition-colors duration-300">
@@ -65,6 +78,19 @@ const Contact = () => {
                 </p>
               </div>
             </div>
+            <svg
+              className="absolute right-5 top-5 h-4 w-4 -translate-x-1 text-foreground/40 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary group-hover:opacity-100"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 17 17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
           </a>
         </div>
 

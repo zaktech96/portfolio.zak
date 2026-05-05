@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 
@@ -13,6 +14,8 @@ const links = [
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme()
   const [activeSection, setActiveSection] = useState('home')
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 22, mass: 0.3 })
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,6 +40,11 @@ const Navbar = () => {
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
+      <motion.div
+        aria-hidden
+        style={{ scaleX }}
+        className="absolute inset-x-0 bottom-0 h-px origin-left bg-gradient-to-r from-primary/0 via-primary to-primary/0"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           <a

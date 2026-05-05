@@ -41,13 +41,16 @@ const Hero = () => {
       <div className="mx-auto max-w-5xl text-center">
         <div className="space-y-8">
           <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card/70 px-4 py-2 text-sm font-medium text-foreground/70 shadow-sm backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-primary" />
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-primary/60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+            </span>
             UK-based full stack developer building live products
           </div>
 
           <div className="space-y-5">
             <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              I turn product ideas into sharp, working web apps.
+              I turn product ideas into <span className="text-gradient-primary">sharp</span>, working web apps.
             </h1>
             <p className="mx-auto max-w-2xl text-pretty text-lg leading-8 text-foreground/68 sm:text-xl">
               My driving factor is taking the lead where ideas need momentum: shaping the user journey, making clear decisions, and building changes that create visible impact.
@@ -55,7 +58,7 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="#projects" className="button-primary min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+            <a href="#projects" className="button-primary shimmer-on-hover min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               View Work
             </a>
             <a href="#contact" className="button-secondary min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
@@ -84,8 +87,8 @@ const Hero = () => {
               ['End-to-end', 'UI, auth, payments, data'],
               ['Lead', 'Impact-focused product changes'],
             ].map(([value, label]) => (
-              <div key={label} className="rounded-xl border border-border/70 bg-card/45 p-4 shadow-sm backdrop-blur">
-                <div className="text-2xl font-semibold text-foreground">{value}</div>
+              <div key={label} className="group rounded-xl border border-border/70 bg-card/45 p-4 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card/65 hover:shadow-[0_18px_50px_hsl(var(--primary)/0.08)]">
+                <div className="text-2xl font-semibold text-foreground transition-colors group-hover:text-primary">{value}</div>
                 <div className="mt-1 text-sm text-foreground/55">{label}</div>
               </div>
             ))}

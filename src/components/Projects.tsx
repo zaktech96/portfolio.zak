@@ -375,8 +375,21 @@ const Projects = () => {
               {/* Content */}
               <div className="p-5 sm:p-6 lg:p-8">
                 <div className="space-y-3 sm:space-y-4">
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight group-hover:text-primary transition-colors duration-300">
+                  <h3 className="inline-flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight group-hover:text-primary transition-colors duration-300">
                     {project.title}
+                    <svg
+                      className="h-5 w-5 -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m13 5 7 7-7 7" />
+                    </svg>
                   </h3>
                   <p className="text-foreground/64 text-sm leading-6 sm:text-base sm:leading-7 line-clamp-3">
                     {project.description}
