@@ -136,7 +136,7 @@ const Projects = () => {
   const shouldReduceMotion = useReducedMotion();
   const projects = [
     {
-      title: "Moncures Beard Oil",
+      title: "Moncures",
       description:
         "A live digital flagship and full backend dashboard for Moncures. Built from scratch with orders, membership users, admin order management, Royal Mail API fulfilment, live stock decreases when orders are placed, price controls, one-click refund processing, shipment tracking inputs, waitlist flows, launch locking, and a responsive glass-gloss storefront.",
       tech: [
