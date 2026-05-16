@@ -27,26 +27,22 @@ import moncuresImage from './moncures.png'
 const impactSteps = [
   {
     title: 'Find the real bottleneck',
-    detail:
-      'Start by separating nice-to-have visuals from the part of the journey that is slowing trust, sales, or operations.',
+    detail: 'Spot the journey, trust, or operations issue.',
     icon: Target,
   },
   {
     title: 'Turn the idea into a working flow',
-    detail:
-      'Map the customer path, admin path, data model, and edge cases before polishing the interface.',
+    detail: 'Shape the customer path, admin path, and data model.',
     icon: Route,
   },
   {
     title: 'Build the system behind the screen',
-    detail:
-      'Connect auth, payments, stock, orders, emails, fulfilment, and admin controls so the product can actually run.',
+    detail: 'Connect auth, payments, stock, orders, and admin control.',
     icon: Workflow,
   },
   {
     title: 'Tighten what users feel',
-    detail:
-      'Reduce friction, sharpen feedback, improve responsive layout, and make each next action obvious.',
+    detail: 'Reduce friction and make every next action obvious.',
     icon: Gauge,
   },
 ]
@@ -54,31 +50,31 @@ const impactSteps = [
 const moncuresOutcomes = [
   {
     label: 'Commerce engine',
-    detail: 'Checkout, live stock changes, price controls, refunds, and customer order flow.',
+    detail: 'Checkout, stock, prices, refunds.',
     icon: Store,
   },
   {
     label: 'Admin control',
-    detail: 'Order management, member records, tracking inputs, and launch locking in one dashboard.',
+    detail: 'Orders, members, tracking, locks.',
     icon: ClipboardList,
   },
   {
     label: 'Fulfilment ready',
-    detail: 'Royal Mail fulfilment support and operational actions built into the backend.',
+    detail: 'Royal Mail and dispatch actions.',
     icon: PackageCheck,
   },
   {
     label: 'Trust layer',
-    detail: 'A polished storefront, cleaner flows, and reliable state across customer and admin journeys.',
+    detail: 'Polish, feedback, reliable state.',
     icon: ShieldCheck,
   },
 ]
 
 const growthMarkers = [
-  'Moved from page builds to full product ownership.',
-  'Built public storefronts and private dashboards together.',
-  'Handled live payments, auth, data, fulfilment, and admin workflows.',
-  'Grew delivery judgment by shipping complete systems, not isolated screens.',
+  'Page builds to product ownership.',
+  'Storefront plus private dashboard.',
+  'Payments, auth, data, fulfilment.',
+  'Complete systems, not isolated screens.',
 ]
 
 const impactStats = [
@@ -93,60 +89,60 @@ const technologyStack = [
     name: 'React',
     icon: SiReact,
     className: 'text-[#61DAFB]',
-    impact: 'Interactive storefront and admin surfaces',
+    impact: 'Interactive UI',
   },
   {
     name: 'TypeScript',
     icon: SiTypescript,
     className: 'text-[#3178C6]',
-    impact: 'Safer product logic across orders and state',
+    impact: 'Safer logic',
   },
   {
     name: 'React Router',
     icon: SiReactrouter,
     className: 'text-[#CA4245]',
-    impact: 'Clear customer and dashboard journeys',
+    impact: 'Clear journeys',
   },
   {
     name: 'Clerk',
     icon: SiClerk,
     className: 'text-[#6C47FF]',
-    impact: 'Accounts, members, and protected admin access',
+    impact: 'Protected access',
   },
   {
     name: 'Stripe',
     icon: SiStripe,
     className: 'text-[#635BFF]',
-    impact: 'Checkout, payment confidence, refund flow',
+    impact: 'Live checkout',
   },
   {
     name: 'Tailwind',
     icon: SiTailwindcss,
     className: 'text-[#06B6D4]',
-    impact: 'Fast polish across responsive layouts',
+    impact: 'Responsive polish',
   },
   {
     name: 'Vercel',
     icon: SiVercel,
     className: 'text-foreground',
-    impact: 'Fast deployment and production delivery',
+    impact: 'Production deploys',
   },
 ]
 
 const technologyImpact = [
   {
-    title: 'Frontend polish creates trust',
-    body: 'React, TypeScript, and Tailwind make the storefront feel composed, fast, and consistent across devices.',
+    title: 'Polished responsive UI',
+    body: 'Storefront confidence across devices.',
     icons: [SiReact, SiTypescript, SiTailwindcss],
   },
   {
-    title: 'Auth and routes create control',
-    body: 'Protected routes and account flows separate customer actions from admin operations without confusing the journey.',
+    title: 'Protected journeys',
+    body: 'Customer accounts and admin control stay separate.',
     icons: [SiReactrouter, SiClerk],
   },
   {
-    title: 'Payments create real commerce',
-    body: 'Stripe turns the design into a working sales flow with checkout, order state, and refund handling.',
+    title: 'Real commerce',
+    body: 'Checkout, order state, and refunds work together.',
     icons: [SiStripe, SiVercel],
   },
 ]
@@ -176,11 +172,10 @@ const Impact = () => {
             Impact & Growth
           </p>
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-            The work is measured by what changes after it ships.
+            Impact shown visually, not just explained.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-foreground/62 sm:text-lg sm:leading-8">
-            I focus on product changes that make a business easier to run and easier to trust:
-            clearer journeys, stronger operations, and systems that can keep improving, in sha Allah.
+            Screens, systems, and stack choices all point to one thing: clearer growth, in sha Allah.
           </p>
         </motion.div>
 
@@ -238,11 +233,10 @@ const Impact = () => {
                 Technologies Into Impact
               </p>
               <h3 className="mt-2 text-2xl font-bold text-foreground">
-                Stack first, then the business result.
+                Stack to result.
               </h3>
               <p className="mt-3 text-sm leading-6 text-foreground/60">
-                The point is not just the tools. Each technology was used to make the product clearer
-                for customers and easier to operate behind the scenes.
+                Each tool had a job: trust, control, checkout, or delivery.
               </p>
             </div>
 

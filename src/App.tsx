@@ -1,5 +1,6 @@
 import { ThemeProvider } from './context/ThemeContext'
 import Hero from './components/Hero'
+import ProductSignals from './components/ProductSignals'
 import About from './components/About'
 import Impact from './components/Impact'
 import Capabilities from './components/Capabilities'
@@ -17,6 +18,7 @@ function App() {
         <div className="min-h-screen">
           <main>
             <Hero />
+            <ProductSignals />
             <About />
             <Impact />
             <Capabilities />
