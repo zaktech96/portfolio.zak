@@ -9,6 +9,14 @@ Goal: make the portfolio feel more polished, responsive, and dynamic without bec
 - Use motion to support navigation and feedback, not as decoration.
 - Avoid heavy glitch effects, constant loops, large moving blobs, rapid text scrambling, or anything that distracts from the work.
 
+## Current Capability Section Update
+
+- Lead with visual proof: Moncures is the primary screenshot because it best communicates product depth.
+- Use supporting screenshots for breadth: NomadSearch, QuranSphere, and VisionBoard show SaaS, content, and planning interfaces.
+- Replace long explanatory paragraphs with compact product-path signals: `Screen`, `Flow`, `System`, and `Growth`.
+- Keep impact language short and operational: first impression, sales flow, admin control, and operational trust.
+- On mobile, preserve the screenshot first; hide secondary overlay copy when space is tight.
+
 ## Interaction Improvements
 
 ### Navigation

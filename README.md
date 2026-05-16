@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Zak Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React, TypeScript, Vite, Tailwind CSS, Framer Motion, and lucide/react-icons.
 
-Currently, two official plugins are available:
+The site is designed to show shipped product work with a focus on visual proof, product impact, and the systems behind each interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Main Sections
 
-## Expanding the ESLint configuration
+- `Hero` introduces the portfolio and primary positioning.
+- `ProductSignals` gives a compact view of build flow, stack, and outcomes.
+- `About` covers background and working style.
+- `Impact` explains how projects connect screens, systems, technologies, and growth.
+- `Capabilities` uses screenshot-led proof points to show how pages become products.
+- `Projects` presents selected work with screenshots, tech tags, links, and impact chips.
+- `Contact` provides the contact form and social links.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Recent Design Direction
 
-- Configure the top-level `parserOptions` property like this:
+The Capabilities section was redesigned to reduce long copy and communicate impact faster:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Moncures is now the main visual proof point.
+- NomadSearch, QuranSphere, and VisionBoard appear as supporting screenshots.
+- The old text-heavy capability grid was replaced with compact product-path and impact-layer tiles.
+- Mobile overlays were tightened so imagery stays readable on small screens.
+
+## Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Useful checks:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npx tsc --noEmit
+git diff --check
 ```
+
+Production build:
+
+```bash
+npm run build
+```
+
+## Project Notes
+
+- Keep screenshots central where possible; the portfolio should show work before explaining it.
+- Use short labels and chips for impact instead of long paragraphs.
+- Respect reduced-motion settings when adding animation.
+- Keep responsive behavior explicit with stable aspect ratios and spacing.
