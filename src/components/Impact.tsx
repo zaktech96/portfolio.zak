@@ -1,5 +1,14 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import {
+  SiClerk,
+  SiReact,
+  SiReactrouter,
+  SiStripe,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+} from 'react-icons/si'
+import {
   ArrowUpRight,
   BadgeCheck,
   ChartNoAxesCombined,
@@ -13,6 +22,7 @@ import {
   Target,
   Workflow,
 } from 'lucide-react'
+import moncuresImage from './moncures.png'
 
 const impactSteps = [
   {
@@ -78,6 +88,69 @@ const impactStats = [
   ['Improve', 'Friction, trust, conversion'],
 ]
 
+const technologyStack = [
+  {
+    name: 'React',
+    icon: SiReact,
+    className: 'text-[#61DAFB]',
+    impact: 'Interactive storefront and admin surfaces',
+  },
+  {
+    name: 'TypeScript',
+    icon: SiTypescript,
+    className: 'text-[#3178C6]',
+    impact: 'Safer product logic across orders and state',
+  },
+  {
+    name: 'React Router',
+    icon: SiReactrouter,
+    className: 'text-[#CA4245]',
+    impact: 'Clear customer and dashboard journeys',
+  },
+  {
+    name: 'Clerk',
+    icon: SiClerk,
+    className: 'text-[#6C47FF]',
+    impact: 'Accounts, members, and protected admin access',
+  },
+  {
+    name: 'Stripe',
+    icon: SiStripe,
+    className: 'text-[#635BFF]',
+    impact: 'Checkout, payment confidence, refund flow',
+  },
+  {
+    name: 'Tailwind',
+    icon: SiTailwindcss,
+    className: 'text-[#06B6D4]',
+    impact: 'Fast polish across responsive layouts',
+  },
+  {
+    name: 'Vercel',
+    icon: SiVercel,
+    className: 'text-foreground',
+    impact: 'Fast deployment and production delivery',
+  },
+]
+
+const technologyImpact = [
+  {
+    title: 'Frontend polish creates trust',
+    body: 'React, TypeScript, and Tailwind make the storefront feel composed, fast, and consistent across devices.',
+    icons: [SiReact, SiTypescript, SiTailwindcss],
+  },
+  {
+    title: 'Auth and routes create control',
+    body: 'Protected routes and account flows separate customer actions from admin operations without confusing the journey.',
+    icons: [SiReactrouter, SiClerk],
+  },
+  {
+    title: 'Payments create real commerce',
+    body: 'Stripe turns the design into a working sales flow with checkout, order state, and refund handling.',
+    icons: [SiStripe, SiVercel],
+  },
+]
+
 const Impact = () => {
   const shouldReduceMotion = useReducedMotion()
 
@@ -130,6 +203,95 @@ const Impact = () => {
               <p className="mt-2 text-sm leading-6 text-foreground/56">{detail}</p>
             </div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.45, delay: 0.06, ease: 'easeOut' }}
+          className="mb-6 overflow-hidden rounded-lg border border-border/70 bg-card/55 shadow-sm backdrop-blur lg:grid lg:grid-cols-[1.08fr_0.92fr]"
+        >
+          <div className="relative min-h-[320px] overflow-hidden border-b border-border/65 bg-background/45 lg:min-h-[520px] lg:border-b-0 lg:border-r">
+            <img
+              src={moncuresImage}
+              alt="Moncures homepage preview"
+              className="h-full w-full object-cover object-left-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/12 to-transparent" />
+            <div className="absolute inset-x-4 bottom-4 rounded-lg border border-white/15 bg-black/45 p-4 text-white shadow-lg backdrop-blur-md sm:inset-x-6 sm:bottom-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase text-white/60">Visual proof</p>
+                  <h3 className="mt-1 text-2xl font-bold">Moncures launched as a real product</h3>
+                </div>
+                <p className="max-w-xs text-sm leading-6 text-white/70">
+                  The design is backed by accounts, payments, stock, fulfilment, and admin control.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-5 sm:p-6 lg:p-7">
+            <div className="mb-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/75">
+                Technologies Into Impact
+              </p>
+              <h3 className="mt-2 text-2xl font-bold text-foreground">
+                Stack first, then the business result.
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-foreground/60">
+                The point is not just the tools. Each technology was used to make the product clearer
+                for customers and easier to operate behind the scenes.
+              </p>
+            </div>
+
+            <div className="grid gap-2 sm:grid-cols-2">
+              {technologyStack.map((tech) => {
+                const Icon = tech.icon
+
+                return (
+                  <div
+                    key={tech.name}
+                    className="group rounded-lg border border-border/55 bg-background/38 p-3 transition-colors hover:border-primary/25 hover:bg-primary/[0.04]"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="grid h-9 w-9 place-items-center rounded-md border border-border/55 bg-card/55">
+                        <Icon className={`h-4 w-4 ${tech.className}`} aria-hidden="true" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-foreground">{tech.name}</p>
+                        <p className="truncate text-xs text-foreground/52">{tech.impact}</p>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="mt-5 space-y-3">
+              {technologyImpact.map((item) => (
+                <div key={item.title} className="rounded-lg border border-border/55 bg-card/38 p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex -space-x-2 pt-0.5">
+                      {item.icons.map((Icon, index) => (
+                        <span
+                          key={`${item.title}-${index}`}
+                          className="grid h-8 w-8 place-items-center rounded-full border border-border/70 bg-background text-primary"
+                        >
+                          <Icon className="h-4 w-4" aria-hidden="true" />
+                        </span>
+                      ))}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-foreground">{item.title}</h4>
+                      <p className="mt-1 text-sm leading-6 text-foreground/58">{item.body}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
