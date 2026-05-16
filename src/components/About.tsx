@@ -113,7 +113,7 @@ const About = () => {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">
             About
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             I build like a developer, but think like a product owner.
           </h2>
         </motion.div>
@@ -125,7 +125,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="rounded-2xl border border-border/70 bg-card/45 p-6 shadow-sm backdrop-blur sm:p-8"
+            className="rounded-lg border border-border/70 bg-card/45 p-6 shadow-sm backdrop-blur sm:p-8"
           >
             <p className="text-lg leading-8 text-foreground/78">
               I'm Zakariye, a full stack developer focused on turning practical ideas into polished,
@@ -154,7 +154,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="group rounded-xl border border-border/60 bg-background/45 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-background/65"
+                  className="group rounded-lg border border-border/60 bg-background/45 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-background/65"
                 >
                   <div className="text-2xl font-bold text-gradient-primary">{stat.value}</div>
                   <div className="mt-1 text-sm text-foreground/60 transition-colors group-hover:text-foreground/75">{stat.label}</div>
@@ -178,7 +178,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="rounded-2xl border border-border/70 bg-card/45 p-5 shadow-sm backdrop-blur transition-colors hover:border-primary/25"
+                className="rounded-lg border border-border/70 bg-card/45 p-5 shadow-sm backdrop-blur transition-colors hover:border-primary/25"
               >
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary/80">{category.name}</h3>
                 <div className="space-y-2">
@@ -189,7 +189,7 @@ const About = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: 0.1 * skillIndex }}
-                      className="flex items-center gap-3 rounded-lg border border-border/40 bg-background/35 px-3 py-2 transition-colors hover:border-primary/20 hover:bg-primary/10"
+                      className="flex items-center gap-3 rounded-md border border-border/40 bg-background/35 px-3 py-2 transition-colors hover:border-primary/20 hover:bg-primary/10"
                     >
                       <div className="w-5 h-5 flex items-center justify-center">
                         {skill.icon}
@@ -208,6 +208,7 @@ const About = () => {
 
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.16)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.14)_1px,transparent_1px)] bg-[size:112px_112px] opacity-20" />
         <div className="absolute left-1/2 top-10 h-px w-[min(900px,90vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
     </section>

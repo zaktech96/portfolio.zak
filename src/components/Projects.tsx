@@ -257,22 +257,29 @@ const Projects = () => {
       // github: "https://github.com/zaktech96/vision-board", // add when public
     },
   ];
+  const featuredOutcomes = [
+    "Live commerce",
+    "Admin dashboard",
+    "Royal Mail flow",
+    "Stock controls",
+  ];
 
   return (
-    <section id="projects" className="py-16 sm:py-24 lg:py-32 relative scroll-mt-28">
+    <section id="projects" className="py-16 sm:py-24 lg:py-32 relative scroll-mt-28 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="absolute left-1/2 top-28 h-[520px] w-[min(980px,90vw)] -translate-x-1/2 rounded-full bg-primary/[0.045] blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.20)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.18)_1px,transparent_1px)] bg-[size:112px_112px] opacity-20" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">
-            Selected Work
-          </p>
-          <h2 className="inline-flex items-center justify-center gap-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            <span className="w-9 h-9 rounded-xl border border-primary/15 bg-primary/10 flex items-center justify-center">
+        <div className="mb-12 grid gap-6 sm:mb-16 lg:mb-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">
+              Selected Work
+            </p>
+            <h2 className="inline-flex items-center gap-3 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+              <span className="w-9 h-9 rounded-lg border border-primary/15 bg-primary/10 flex items-center justify-center">
               <svg
                 className="w-5 h-5 text-primary"
                 fill="none"
@@ -287,95 +294,108 @@ const Projects = () => {
                 />
               </svg>
             </span>
-            Featured Projects
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-foreground/60 sm:text-lg">
-            Recent products and side projects across e-commerce, SaaS, travel, content, and utility workflows.
+              Featured Projects
+            </h2>
+          </div>
+          <p className="max-w-2xl text-base leading-7 text-foreground/60 sm:text-lg lg:justify-self-end">
+            A tighter view of the products I have shipped: commerce systems, SaaS workflows,
+            travel tools, content platforms, and utility apps with real product flows behind the UI.
           </p>
         </div>
 
         <div className="space-y-6 sm:space-y-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
-              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.42, delay: Math.min(index * 0.04, 0.18), ease: "easeOut" }}
-              className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/55 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_26px_80px_hsl(var(--primary)/0.10)]"
-            >
-              {index === 0 && (
-                <div className="absolute right-4 top-4 z-10 rounded-full border border-primary/25 bg-background/80 px-3 py-1 text-xs font-semibold text-primary shadow-sm backdrop-blur">
-                  Live Product
-                </div>
-              )}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              {/* Project Image with Overlay */}
-              {project.image && (
-                <div className="relative aspect-[16/8.5] overflow-hidden border-b border-border/60 bg-muted/40">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          {projects.map((project, index) => {
+            const isFeatured = index === 0;
 
-                  {/* Hover Links */}
-                  {(project.github || project.link) && (
-                    <div className="absolute inset-0 hidden items-center justify-center gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:flex sm:gap-4">
-                      <div className="flex items-center gap-2 sm:gap-4">
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
-                            aria-label="View Source Code"
-                          >
-                            <svg
-                              className="w-5 h-5"
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                              strokeWidth="0.5"
-                            >
-                              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                          </a>
-                        )}
+            return (
+              <motion.div
+                key={index}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+                whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.42, delay: Math.min(index * 0.04, 0.18), ease: "easeOut" }}
+                className={`group relative overflow-hidden rounded-lg border border-border/70 bg-card/55 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_26px_80px_hsl(var(--primary)/0.10)] ${
+                  isFeatured ? "lg:grid lg:grid-cols-[1.18fr_0.82fr]" : ""
+                }`}
+              >
+                {isFeatured && (
+                  <div className="absolute right-4 top-4 z-10 rounded-full border border-primary/25 bg-background/80 px-3 py-1 text-xs font-semibold text-primary shadow-sm backdrop-blur">
+                    Live Product
+                  </div>
+                )}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                {/* Project Image with Overlay */}
+                {project.image && (
+                  <div className={`relative overflow-hidden bg-muted/40 ${
+                    isFeatured
+                      ? "aspect-[16/10] border-b border-border/60 lg:aspect-auto lg:min-h-[520px] lg:border-b-0 lg:border-r"
+                      : "aspect-[16/8.5] border-b border-border/60"
+                  }`}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.025] ${
+                        isFeatured ? "object-left-top" : ""
+                      }`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                        {project.link && (
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
-                            aria-label="View Live Demo"
-                          >
-                            <svg
-                              className="w-5 h-5"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="3"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
+                    {/* Hover Links */}
+                    {(project.github || project.link) && (
+                      <div className="absolute inset-0 hidden items-center justify-center gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:flex sm:gap-4">
+                        <div className="flex items-center gap-2 sm:gap-4">
+                          {project.github && (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+                              aria-label="View Source Code"
                             >
-                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                              <polyline points="15 3 21 3 21 9" />
-                              <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                          </a>
-                        )}
+                              <svg
+                                className="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                strokeWidth="0.5"
+                              >
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                              </svg>
+                            </a>
+                          )}
+
+                          {project.link && (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2.5 rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+                              aria-label="View Live Demo"
+                            >
+                              <svg
+                                className="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                              </svg>
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              )}
+                    )}
+                  </div>
+                )}
 
-              {/* Content */}
-              <div className="p-5 sm:p-6 lg:p-8">
-                <div className="space-y-3 sm:space-y-4">
-                  <h3 className="inline-flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight group-hover:text-primary transition-colors duration-300">
+                {/* Content */}
+                <div className={`p-5 sm:p-6 lg:p-8 ${isFeatured ? "lg:flex lg:flex-col lg:justify-between" : ""}`}>
+                  <div className="space-y-3 sm:space-y-4">
+                  <h3 className="inline-flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold group-hover:text-primary transition-colors duration-300">
                     {project.title}
                     <svg
                       className="h-5 w-5 -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
@@ -394,6 +414,19 @@ const Projects = () => {
                   <p className="text-foreground/64 text-sm leading-6 sm:text-base sm:leading-7 line-clamp-3">
                     {project.description}
                   </p>
+
+                  {isFeatured && (
+                    <div className="grid gap-2 pt-2 sm:grid-cols-2">
+                      {featuredOutcomes.map((outcome) => (
+                        <div
+                          key={outcome}
+                          className="rounded-md border border-primary/15 bg-primary/[0.055] px-3 py-2 text-sm font-semibold text-foreground/72"
+                        >
+                          {outcome}
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
                     {project.tech.map((tech, techIndex) => (
@@ -504,7 +537,8 @@ const Projects = () => {
                 </div>
               </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

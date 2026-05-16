@@ -71,6 +71,13 @@ const growthMarkers = [
   'Grew delivery judgment by shipping complete systems, not isolated screens.',
 ]
 
+const impactStats = [
+  ['Direction', 'Problem, users, journey'],
+  ['Build', 'Frontend, backend, data'],
+  ['Operate', 'Orders, stock, fulfilment'],
+  ['Improve', 'Friction, trust, conversion'],
+]
+
 const Impact = () => {
   const shouldReduceMotion = useReducedMotion()
 
@@ -95,7 +102,7 @@ const Impact = () => {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">
             Impact & Growth
           </p>
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
             The work is measured by what changes after it ships.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-foreground/62 sm:text-lg sm:leading-8">
@@ -104,24 +111,45 @@ const Impact = () => {
           </p>
         </motion.div>
 
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.45, delay: 0.04, ease: 'easeOut' }}
+          className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {impactStats.map(([label, detail], index) => (
+            <div
+              key={label}
+              className="rounded-lg border border-border/65 bg-card/50 p-4 shadow-sm backdrop-blur"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-sm font-semibold text-foreground">{label}</p>
+                <span className="text-xs font-semibold text-primary/70">0{index + 1}</span>
+              </div>
+              <p className="mt-2 text-sm leading-6 text-foreground/56">{detail}</p>
+            </div>
+          ))}
+        </motion.div>
+
         <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, x: -14 }}
             whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="rounded-2xl border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur sm:p-6 lg:p-7"
+            className="rounded-lg border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur sm:p-6 lg:p-7"
           >
             <div className="mb-6 flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/75">
                   How Impact Is Made
                 </p>
-                <h3 className="mt-2 text-2xl font-bold tracking-tight text-foreground">
+                <h3 className="mt-2 text-2xl font-bold text-foreground">
                   From problem to operating flow
                 </h3>
               </div>
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-primary/15 bg-primary/10 text-primary">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-primary/15 bg-primary/10 text-primary">
                 <Sparkles className="h-5 w-5" aria-hidden="true" />
               </span>
             </div>
@@ -141,11 +169,11 @@ const Impact = () => {
                       delay: Math.min(index * 0.05, 0.16),
                       ease: 'easeOut',
                     }}
-                    className="group rounded-xl border border-border/55 bg-background/38 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-primary/[0.045]"
+                    className="group rounded-lg border border-border/55 bg-background/38 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-primary/[0.045]"
                   >
                     <div className="flex gap-4">
                       <div className="flex flex-col items-center">
-                        <span className="grid h-9 w-9 place-items-center rounded-lg border border-primary/15 bg-primary/10 text-primary">
+                        <span className="grid h-9 w-9 place-items-center rounded-md border border-primary/15 bg-primary/10 text-primary">
                           <Icon className="h-4 w-4" aria-hidden="true" />
                         </span>
                         {index !== impactSteps.length - 1 && (
@@ -176,7 +204,7 @@ const Impact = () => {
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.45, delay: 0.05, ease: 'easeOut' }}
-              className="overflow-hidden rounded-2xl border border-border/70 bg-card/55 shadow-sm backdrop-blur"
+              className="overflow-hidden rounded-lg border border-border/70 bg-card/55 shadow-sm backdrop-blur"
             >
               <div className="border-b border-border/60 bg-background/35 p-5 sm:p-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -184,7 +212,7 @@ const Impact = () => {
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/75">
                       Moncures Case Study
                     </p>
-                    <h3 className="mt-2 text-2xl font-bold tracking-tight text-foreground">
+                    <h3 className="mt-2 text-2xl font-bold text-foreground">
                       Growth through real product infrastructure
                     </h3>
                   </div>
@@ -213,9 +241,9 @@ const Impact = () => {
                         delay: Math.min(index * 0.04, 0.14),
                         ease: 'easeOut',
                       }}
-                      className="rounded-xl border border-border/55 bg-background/38 p-4 transition-colors hover:border-primary/20 hover:bg-primary/[0.04]"
+                      className="rounded-lg border border-border/55 bg-background/38 p-4 transition-colors hover:border-primary/20 hover:bg-primary/[0.04]"
                     >
-                      <span className="mb-4 grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary">
+                      <span className="mb-4 grid h-9 w-9 place-items-center rounded-md bg-primary/10 text-primary">
                         <Icon className="h-4 w-4" aria-hidden="true" />
                       </span>
                       <h4 className="text-base font-semibold text-foreground">{outcome.label}</h4>
@@ -231,18 +259,18 @@ const Impact = () => {
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
-              className="rounded-2xl border border-border/70 bg-background/42 p-5 shadow-sm backdrop-blur sm:p-6"
+              className="rounded-lg border border-border/70 bg-background/42 p-5 shadow-sm backdrop-blur sm:p-6"
             >
               <div className="mb-5 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/75">
                     Growth Achieved
                   </p>
-                  <h3 className="mt-2 text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                  <h3 className="mt-2 text-xl font-bold text-foreground sm:text-2xl">
                     Bigger scope, better judgment, cleaner delivery
                   </h3>
                 </div>
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-primary/15 bg-primary/10 text-primary">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-primary/15 bg-primary/10 text-primary">
                   <ChartNoAxesCombined className="h-5 w-5" aria-hidden="true" />
                 </span>
               </div>
@@ -251,7 +279,7 @@ const Impact = () => {
                 {growthMarkers.map((marker) => (
                   <div
                     key={marker}
-                    className="flex gap-3 rounded-xl border border-border/50 bg-card/35 p-4"
+                    className="flex gap-3 rounded-lg border border-border/50 bg-card/35 p-4"
                   >
                     <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                     <p className="text-sm leading-6 text-foreground/64">{marker}</p>

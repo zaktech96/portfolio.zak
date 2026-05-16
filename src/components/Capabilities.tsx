@@ -137,7 +137,8 @@ const Capabilities = () => {
     <section id="capabilities" className="relative scroll-mt-28 overflow-hidden py-20 sm:py-28">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="absolute right-0 top-24 h-80 w-[min(620px,82vw)] rounded-full bg-primary/[0.055] blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.18)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.16)_1px,transparent_1px)] bg-[size:104px_104px] opacity-20" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -152,7 +153,7 @@ const Capabilities = () => {
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">
               Craft
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
               More than pages. I build the product around the page.
             </h2>
             <p className="mt-5 text-lg leading-8 text-foreground/62">
@@ -163,7 +164,7 @@ const Capabilities = () => {
               refunds, Royal Mail tracking, and fulfilment from the website.
             </p>
 
-            <div className="mt-8 rounded-2xl border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur">
+            <div className="mt-8 rounded-lg border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-sm font-semibold text-foreground">Current focus</p>
@@ -189,12 +190,12 @@ const Capabilities = () => {
                     whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.16), ease: 'easeOut' }}
-                    className="group rounded-2xl border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_70px_hsl(var(--primary)/0.09)]"
+                    className="group rounded-lg border border-border/70 bg-card/50 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_70px_hsl(var(--primary)/0.09)]"
                   >
-                    <div className="mb-5 grid h-11 w-11 place-items-center rounded-xl border border-primary/15 bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
+                    <div className="mb-5 grid h-11 w-11 place-items-center rounded-lg border border-primary/15 bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
                       <CapabilityIcon name={area.icon} />
                     </div>
-                    <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                    <h3 className="text-lg font-semibold text-foreground">
                       {area.title}
                     </h3>
                     <p className="mt-2 text-sm leading-6 text-foreground/60">{area.description}</p>
@@ -208,14 +209,14 @@ const Capabilities = () => {
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
-              className="rounded-2xl border border-border/70 bg-background/40 p-4 shadow-sm backdrop-blur sm:p-5"
+              className="rounded-lg border border-border/70 bg-background/40 p-4 shadow-sm backdrop-blur sm:p-5"
             >
               <div className="grid gap-3 sm:grid-cols-2">
                 {principles.map((principle) => {
                   return (
                     <div
                       key={principle.title}
-                      className="rounded-xl border border-border/55 bg-card/40 p-4 transition-colors hover:border-primary/20 hover:bg-primary/[0.045]"
+                      className="rounded-lg border border-border/55 bg-card/40 p-4 transition-colors hover:border-primary/20 hover:bg-primary/[0.045]"
                     >
                       <div className="flex items-start gap-3">
                         <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">

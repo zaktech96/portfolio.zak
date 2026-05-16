@@ -1,6 +1,18 @@
 import { ScrollIndicator } from './ui/scroll-indicator'
 
 const Hero = () => {
+  const proofPoints = [
+    ['Live commerce', 'Storefront, checkout, stock, refunds'],
+    ['Admin systems', 'Orders, members, fulfilment, tracking'],
+    ['Growth work', 'Sharper flows, trust, and delivery judgment'],
+  ]
+
+  const launchRows = [
+    ['Storefront', 'Customer journey live'],
+    ['Checkout', 'Payments and order state'],
+    ['Operations', 'Admin, fulfilment, tracking'],
+  ]
+
   const socialLinks = [
     {
       name: 'GitHub',
@@ -32,15 +44,15 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="relative flex min-h-screen scroll-mt-24 items-center justify-center overflow-hidden px-4 pt-32 sm:pt-28">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--border)/0.35)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.35)_1px,transparent_1px)] bg-[size:88px_88px] opacity-30" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/0.20),transparent_42%),radial-gradient(circle_at_80%_70%,hsl(210_90%_56%/0.11),transparent_34%)]" />
+    <section id="home" className="relative flex min-h-screen scroll-mt-24 items-center overflow-hidden px-4 pt-32 sm:pt-28">
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--border)/0.32)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.28)_1px,transparent_1px)] bg-[size:88px_88px] opacity-30" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,hsl(var(--primary)/0.14),transparent_34%),linear-gradient(300deg,hsl(35_75%_54%/0.12),transparent_30%)]" />
       <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-background to-transparent" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-background to-transparent" />
 
-      <div className="mx-auto max-w-5xl text-center">
-        <div className="space-y-8">
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card/70 px-4 py-2 text-sm font-medium text-foreground/70 shadow-sm backdrop-blur">
+      <div className="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1.03fr_0.97fr] lg:items-center">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card/70 px-4 py-2 text-sm font-medium text-foreground/70 shadow-sm backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-primary/60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
@@ -48,16 +60,16 @@ const Hero = () => {
             UK-based full stack developer building impact-led products
           </div>
 
-          <div className="space-y-5">
-            <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              I build web products that make growth easier to see.
+          <div className="mt-8 space-y-6">
+            <h1 className="max-w-4xl text-balance text-5xl font-bold text-foreground sm:text-6xl lg:text-7xl">
+              Product builds with sharper journeys and real operating power.
             </h1>
-            <p className="mx-auto max-w-2xl text-pretty text-lg leading-8 text-foreground/68 sm:text-xl">
-              I take ideas from first direction to working systems: clear customer journeys, strong backend flows, and practical improvements that create visible impact after launch.
+            <p className="max-w-2xl text-pretty text-lg leading-8 text-foreground/68 sm:text-xl">
+              I take ideas from first direction to launch-ready systems: customer journeys, backend flows, admin control, and practical improvements that make growth visible after launch.
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="#impact" className="button-primary shimmer-on-hover min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               See the Impact
             </a>
@@ -66,7 +78,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="flex justify-center gap-3 pt-2">
+          <div className="mt-8 flex gap-3">
             {socialLinks.map((link, index) => (
               <a
                 key={index}
@@ -81,20 +93,94 @@ const Hero = () => {
             ))}
           </div>
 
-          <div className="grid gap-3 pt-8 text-left sm:grid-cols-3">
-            {[
-              ['Impact', 'Clearer flows and stronger trust'],
-              ['Growth', 'Systems that support scale'],
-              ['Ownership', 'UI, auth, payments, data'],
-            ].map(([value, label]) => (
-              <div key={label} className="group rounded-xl border border-border/70 bg-card/45 p-4 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card/65 hover:shadow-[0_18px_50px_hsl(var(--primary)/0.08)]">
+          <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
+            {proofPoints.map(([value, label]) => (
+              <div key={label} className="group rounded-lg border border-border/70 bg-card/45 p-4 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card/65 hover:shadow-[0_18px_50px_hsl(var(--primary)/0.08)]">
                 <div className="text-2xl font-semibold text-foreground transition-colors group-hover:text-primary">{value}</div>
                 <div className="mt-1 text-sm text-foreground/55">{label}</div>
               </div>
             ))}
           </div>
+        </div>
 
-          <div className="pt-8">
+        <div className="relative">
+          <div className="absolute inset-x-8 -top-6 h-px bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
+          <div className="rounded-lg border border-border/75 bg-card/68 p-3 shadow-[0_30px_110px_hsl(var(--foreground)/0.10)] backdrop-blur-xl">
+            <div className="rounded-md border border-border/65 bg-background/60">
+              <div className="flex items-center justify-between border-b border-border/60 px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-sky-500/80" />
+                </div>
+                <span className="text-xs font-semibold uppercase text-foreground/45">
+                  Launch System
+                </span>
+              </div>
+
+              <div className="grid gap-3 p-4 sm:p-5">
+                <div className="rounded-lg border border-primary/20 bg-primary/[0.07] p-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-sm font-semibold text-primary">Moncures</p>
+                      <h2 className="mt-2 text-2xl font-bold text-foreground">
+                        Digital flagship plus backend control
+                      </h2>
+                    </div>
+                    <span className="rounded-full border border-primary/25 bg-background/70 px-3 py-1 text-xs font-semibold text-primary">
+                      Live
+                    </span>
+                  </div>
+                  <div className="mt-5 grid gap-2 sm:grid-cols-3">
+                    {['Orders', 'Stock', 'Fulfilment'].map((item) => (
+                      <div key={item} className="rounded-md border border-border/55 bg-background/45 px-3 py-2 text-sm font-medium text-foreground/70">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid gap-3">
+                  {launchRows.map(([label, detail], index) => (
+                    <div key={label} className="flex items-center gap-3 rounded-lg border border-border/55 bg-card/45 p-3">
+                      <span className="grid h-9 w-9 place-items-center rounded-md border border-border/55 bg-background/55 text-sm font-semibold text-primary">
+                        0{index + 1}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold text-foreground">{label}</p>
+                        <p className="text-sm text-foreground/55">{detail}</p>
+                      </div>
+                      <svg
+                        className="h-4 w-4 shrink-0 text-primary"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="m13 5 7 7-7 7" />
+                      </svg>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.07] p-4">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-sm font-semibold text-foreground">Growth loop</p>
+                    <p className="text-sm text-amber-600 dark:text-amber-300">Idea to launch</p>
+                  </div>
+                  <div className="mt-3 h-2 rounded-full bg-background/70">
+                    <div className="h-full w-[86%] rounded-full bg-gradient-to-r from-primary via-amber-500 to-sky-500" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 flex justify-center lg:justify-end">
             <ScrollIndicator />
           </div>
         </div>
