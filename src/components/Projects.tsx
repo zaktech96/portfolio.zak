@@ -138,7 +138,8 @@ const Projects = () => {
     {
       title: "Moncures",
       description:
-        "A live digital flagship and full backend dashboard for Moncures. Built from scratch with orders, membership users, admin order management, Royal Mail API fulfilment, live stock decreases when orders are placed, price controls, one-click refund processing, shipment tracking inputs, waitlist flows, launch locking, and a responsive glass-gloss storefront.",
+        "Commerce storefront plus admin system for orders, members, stock, fulfilment, and refunds.",
+      impact: ["Sales flow", "Admin OS", "Fulfilment", "Trust"],
       tech: [
         "React",
         "TypeScript",
@@ -155,7 +156,8 @@ const Projects = () => {
     {
       title: "NomadSearch",
       description:
-        "A modern, production-ready SaaS application built with React Router v7, Convex, Clerk, and Polar.sh. Features real-time database, authentication, subscription management, AI chat integration, and email notifications. Ready for Vercel deployment with built-in error tracking.",
+        "SaaS workflow with auth, realtime data, subscriptions, AI chat, and email notifications.",
+      impact: ["SaaS flow", "Auth", "Realtime", "AI"],
       tech: [
         "React",
         "TypeScript",
@@ -172,7 +174,8 @@ const Projects = () => {
     {
       title: "QuranSphere",
       description:
-        "Experience the Holy Quran in the Digital Age with beautiful recitations, precise translations, and a modern reading experience",
+        "Quran listening and reading experience with clean navigation and recitation flow.",
+      impact: ["Reading UX", "Audio", "Content", "Faith tool"],
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
       image: quranImage,
       link: "https://quransphere.vercel.app/",
@@ -181,7 +184,8 @@ const Projects = () => {
     {
       title: "Discount Flight Tracker",
       description:
-        "A modern flight deal tracker for finding discounted routes with a focused, responsive search experience. Built with a clean React and TypeScript interface, fast filtering, and a polished travel-focused UI for comparing flight opportunities.",
+        "Flight deal tracker focused on fast route search, filtering, and comparison.",
+      impact: ["Search", "Filtering", "Travel UI", "Deals"],
       tech: ["React", "TypeScript", "Nextjs", "Tailwindcss"],
       image: discountFlightTrackerImage,
       link: "https://discount-flight-tracker.vercel.app/",
@@ -190,7 +194,8 @@ const Projects = () => {
     {
       title: "Howlin",
       description:
-        "A modern restaurant website for Howlin Fried Chicken, bringing authentic Nashville hot chicken to Birmingham. Built with Kaizen - a production-ready SaaS starter template featuring React Router v7, Convex, Clerk, and Polar.sh for a full-stack experience.",
+        "Restaurant site built around menu discovery, brand feel, and ordering confidence.",
+      impact: ["Brand", "Menu", "Local trust", "Mobile"],
       tech: [
         "React",
         "TypeScript",
@@ -208,7 +213,8 @@ const Projects = () => {
     {
       title: "Rahla",
       description:
-        "A clean, minimal chauffeur booking platform for Saudi Arabia. Features point-to-point and hourly rides, airport transfers, and intercity trips. Built with live distance/duration calculations, dynamic pricing with surcharges and discounts, and Polar checkout integration. Mobile-first design with tasteful animations and consistent UI.",
+        "Chauffeur booking flow with trip types, dynamic pricing, and checkout.",
+      impact: ["Booking", "Pricing", "Checkout", "Mobile"],
       tech: [
         "React",
         "TypeScript",
@@ -225,7 +231,8 @@ const Projects = () => {
     {
       title: "Muslim Travel Guide",
       description:
-        "Your Islamic travel companion. Stay connected to your faith anywhere in the world. Features accurate prayer times for 50,000+ cities, instant Qibla direction, halal food finder, mosque locator, and community features to connect with fellow Muslim travelers.",
+        "Islamic travel tool for prayer times, Qibla, halal food, and mosque discovery.",
+      impact: ["Prayer", "Qibla", "Discovery", "Community"],
       tech: [
         "React",
         "TypeScript",
@@ -243,7 +250,8 @@ const Projects = () => {
     {
       title: "VisionBoard",
       description:
-        "A modern digital vision board platform that turns abstract dreams into visual roadmaps. Features smart templates, interactive drag-and-drop creation, goal-based categories, and a fully responsive dark/light experience for planning your future on any device.",
+        "Visual planning tool for turning goals into boards, categories, and roadmaps.",
+      impact: ["Planning", "Drag-drop", "Goals", "Templates"],
       tech: [
         "React",
         "TypeScript",
@@ -257,13 +265,6 @@ const Projects = () => {
       // github: "https://github.com/zaktech96/vision-board", // add when public
     },
   ];
-  const featuredOutcomes = [
-    "Live commerce",
-    "Admin dashboard",
-    "Royal Mail flow",
-    "Stock controls",
-  ];
-
   return (
     <section id="projects" className="py-16 sm:py-24 lg:py-32 relative scroll-mt-28 overflow-hidden">
       {/* Decorative elements */}
@@ -298,8 +299,7 @@ const Projects = () => {
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-7 text-foreground/60 sm:text-lg lg:justify-self-end">
-            A tighter view of the products I have shipped: commerce systems, SaaS workflows,
-            travel tools, content platforms, and utility apps with real product flows behind the UI.
+            Screenshots show the interface. Impact chips show why each build mattered.
           </p>
         </div>
 
@@ -415,18 +415,20 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  {isFeatured && (
-                    <div className="grid gap-2 pt-2 sm:grid-cols-2">
-                      {featuredOutcomes.map((outcome) => (
-                        <div
-                          key={outcome}
-                          className="rounded-md border border-primary/15 bg-primary/[0.055] px-3 py-2 text-sm font-semibold text-foreground/72"
-                        >
-                          {outcome}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <div className="grid gap-2 pt-2 sm:grid-cols-2">
+                    {project.impact.map((outcome) => (
+                      <div
+                        key={outcome}
+                        className={`rounded-md border px-3 py-2 text-sm font-semibold ${
+                          isFeatured
+                            ? "border-primary/15 bg-primary/[0.055] text-foreground/72"
+                            : "border-border/55 bg-background/40 text-foreground/62"
+                        }`}
+                      >
+                        {outcome}
+                      </div>
+                    ))}
+                  </div>
 
                   <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
                     {project.tech.map((tech, techIndex) => (
