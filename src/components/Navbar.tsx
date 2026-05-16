@@ -6,6 +6,7 @@ import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 const links = [
   { href: '#home', id: 'home', label: 'Home' },
   { href: '#about', id: 'about', label: 'About' },
+  { href: '#impact', id: 'impact', label: 'Impact' },
   { href: '#capabilities', id: 'capabilities', label: 'Craft' },
   { href: '#projects', id: 'projects', label: 'Projects' },
   { href: '#contact', id: 'contact', label: 'Contact' },

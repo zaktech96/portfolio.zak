@@ -11,6 +11,7 @@ interface TimelineItem {
 const sections: TimelineItem[] = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'impact', label: 'Impact' },
   { id: 'capabilities', label: 'Craft' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' }

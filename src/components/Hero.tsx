@@ -45,21 +45,21 @@ const Hero = () => {
               <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-primary/60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            UK-based full stack developer building live products
+            UK-based full stack developer building impact-led products
           </div>
 
           <div className="space-y-5">
             <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              I turn product ideas into <span className="text-gradient-primary">sharp</span>, working web apps.
+              I build web products that make growth easier to see.
             </h1>
             <p className="mx-auto max-w-2xl text-pretty text-lg leading-8 text-foreground/68 sm:text-xl">
-              My driving factor is taking the lead where ideas need momentum: shaping the user journey, making clear decisions, and building changes that create visible impact.
+              I take ideas from first direction to working systems: clear customer journeys, strong backend flows, and practical improvements that create visible impact after launch.
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="#projects" className="button-primary shimmer-on-hover min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
-              View Work
+            <a href="#impact" className="button-primary shimmer-on-hover min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+              See the Impact
             </a>
             <a href="#contact" className="button-secondary min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               Start a Project
@@ -83,9 +83,9 @@ const Hero = () => {
 
           <div className="grid gap-3 pt-8 text-left sm:grid-cols-3">
             {[
-              ['Live', 'E-commerce and SaaS builds'],
-              ['End-to-end', 'UI, auth, payments, data'],
-              ['Lead', 'Impact-focused product changes'],
+              ['Impact', 'Clearer flows and stronger trust'],
+              ['Growth', 'Systems that support scale'],
+              ['Ownership', 'UI, auth, payments, data'],
             ].map(([value, label]) => (
               <div key={label} className="group rounded-xl border border-border/70 bg-card/45 p-4 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card/65 hover:shadow-[0_18px_50px_hsl(var(--primary)/0.08)]">
                 <div className="text-2xl font-semibold text-foreground transition-colors group-hover:text-primary">{value}</div>
