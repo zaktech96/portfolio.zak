@@ -7,7 +7,7 @@ import muslimTravelGuideImage from "./muslim-travel-guide.png";
 import visionboardImage from "./visionboard.png";
 import moncuresImage from "./moncures.png";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Layers3, Rocket, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, Layers, Rocket, Sparkles, Workflow } from "lucide-react";
 // import barakahImage from "./barakah.png";
 
 type ProjectMessage = {
@@ -45,7 +45,7 @@ const storySteps = [
   {
     label: "Build",
     key: "build" as const,
-    icon: Layers3,
+    icon: Layers,
   },
   {
     label: "Result",
