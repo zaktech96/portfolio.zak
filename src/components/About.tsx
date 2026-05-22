@@ -99,6 +99,8 @@ const skills = [
   }
 ];
 
+const focusChips = ['Product thinking', 'UI systems', 'Backend flows', 'Launch ownership'];
+
 const About = () => {
   return (
     <section id="about" className="relative scroll-mt-28 overflow-hidden py-20 sm:py-28">
@@ -114,7 +116,7 @@ const About = () => {
             About
           </p>
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
-            I build like a developer, but think like a product owner.
+            Developer execution. Product ownership.
           </h2>
         </motion.div>
 
@@ -127,26 +129,27 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="rounded-lg border border-border/70 bg-card/45 p-6 shadow-sm backdrop-blur sm:p-8"
           >
-            <p className="text-lg leading-8 text-foreground/78">
-              I'm Zakariye, a full stack developer focused on turning practical ideas into polished,
-              usable products. I like working close to the problem: understanding what the user needs,
-              shaping the flow, then taking the lead on the interface and backend that make it real.
+            <p className="text-lg leading-8 text-foreground/72">
+              I'm Zakariye, a full stack developer turning practical ideas into polished products.
             </p>
-            <p className="mt-5 text-lg leading-8 text-foreground/68">
-              My recent work spans live commerce, SaaS-style dashboards, travel tools, content
-              platforms, authentication, payments, real-time data, and responsive interfaces. I care
-              about clean code, but I care just as much about whether the work creates impact:
-              clearer flows, stronger trust, faster decisions, and real improvements for the person
-              using it.
-            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {focusChips.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-primary/15 bg-primary/[0.055] px-3 py-1.5 text-sm font-semibold text-foreground/72"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-3 mt-8">
               {[
-                { label: 'Projects Completed', value: '10+' },
-                { label: 'Years Building', value: '2+' },
+                { label: 'Projects', value: '10+' },
+                { label: 'Years', value: '2+' },
                 { label: 'Ownership Style', value: 'Lead' },
-                { label: 'Core Standard', value: 'Impact' }
+                { label: 'Standard', value: 'Impact' }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

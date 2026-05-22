@@ -26,23 +26,23 @@ import moncuresImage from './moncures.png'
 
 const impactSteps = [
   {
-    title: 'Find the real bottleneck',
-    detail: 'Spot the journey, trust, or operations issue.',
+    title: 'Find friction',
+    detail: 'Journey, trust, or ops.',
     icon: Target,
   },
   {
-    title: 'Turn the idea into a working flow',
-    detail: 'Shape the customer path, admin path, and data model.',
+    title: 'Shape flow',
+    detail: 'Customer, admin, data.',
     icon: Route,
   },
   {
-    title: 'Build the system behind the screen',
-    detail: 'Connect auth, payments, stock, orders, and admin control.',
+    title: 'Build system',
+    detail: 'Auth, payments, stock.',
     icon: Workflow,
   },
   {
-    title: 'Tighten what users feel',
-    detail: 'Reduce friction and make every next action obvious.',
+    title: 'Tighten UX',
+    detail: 'Clear next actions.',
     icon: Gauge,
   },
 ]
@@ -78,10 +78,10 @@ const growthMarkers = [
 ]
 
 const impactStats = [
-  ['Direction', 'Problem, users, journey'],
-  ['Build', 'Frontend, backend, data'],
-  ['Operate', 'Orders, stock, fulfilment'],
-  ['Improve', 'Friction, trust, conversion'],
+  ['Direction', 'Problem'],
+  ['Build', 'System'],
+  ['Operate', 'Admin'],
+  ['Improve', 'Growth'],
 ]
 
 const technologyStack = [
@@ -172,10 +172,10 @@ const Impact = () => {
             Impact & Growth
           </p>
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-            Impact shown visually, not just explained.
+            Impact you can see.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-foreground/62 sm:text-lg sm:leading-8">
-            Screens, systems, and stack choices all point to one thing: clearer growth, in sha Allah.
+            Screens, systems, growth.
           </p>
         </motion.div>
 
@@ -218,10 +218,10 @@ const Impact = () => {
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase text-white/60">Visual proof</p>
-                  <h3 className="mt-1 text-2xl font-bold">Moncures launched as a real product</h3>
+                  <h3 className="mt-1 text-2xl font-bold">Moncures launched live</h3>
                 </div>
                 <p className="max-w-xs text-sm leading-6 text-white/70">
-                  The design is backed by accounts, payments, stock, fulfilment, and admin control.
+                  Accounts, payments, stock, admin.
                 </p>
               </div>
             </div>
@@ -236,7 +236,7 @@ const Impact = () => {
                 Stack to result.
               </h3>
               <p className="mt-3 text-sm leading-6 text-foreground/60">
-                Each tool had a job: trust, control, checkout, or delivery.
+                Tools mapped to outcomes.
               </p>
             </div>
 
@@ -302,7 +302,7 @@ const Impact = () => {
                   How Impact Is Made
                 </p>
                 <h3 className="mt-2 text-2xl font-bold text-foreground">
-                  From problem to operating flow
+                  Problem to flow
                 </h3>
               </div>
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-primary/15 bg-primary/10 text-primary">

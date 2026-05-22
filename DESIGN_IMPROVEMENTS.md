@@ -17,6 +17,14 @@ Goal: make the portfolio feel more polished, responsive, and dynamic without bec
 - Keep impact language short and operational: first impression, sales flow, admin control, and operational trust.
 - On mobile, preserve the screenshot first; hide secondary overlay copy when space is tight.
 
+## Reduced Text Pass
+
+- Keep project descriptions because they explain the work, but support them with visual story components.
+- Reduce general section copy in Hero, About, Impact, Capabilities, and Contact.
+- Use chips, compact stats, short labels, and screenshots to carry more of the message.
+- Project cards now include animated `Need`, `Build`, and `Result` tiles to communicate impact without extra paragraphs.
+- Tech stacks should stay scannable through icons and short chips instead of long text rows.
+
 ## Interaction Improvements
 
 ### Navigation

@@ -16,8 +16,12 @@ The site is designed to show shipped product work with a focus on visual proof, 
 
 ## Recent Design Direction
 
-The Capabilities section was redesigned to reduce long copy and communicate impact faster:
+The latest pass reduces general site copy while keeping the project descriptions useful:
 
+- Hero, About, Impact, Capabilities, and Contact use shorter section copy.
+- The About section now uses focus chips instead of long paragraphs.
+- Project cards keep descriptions, but add animated `Need / Build / Result` signals.
+- Project impact chips and stack icons make each build easier to scan.
 - Moncures is now the main visual proof point.
 - NomadSearch, QuranSphere, and VisionBoard appear as supporting screenshots.
 - The old text-heavy capability grid was replaced with compact product-path and impact-layer tiles.
@@ -47,5 +51,6 @@ npm run build
 
 - Keep screenshots central where possible; the portfolio should show work before explaining it.
 - Use short labels and chips for impact instead of long paragraphs.
+- Keep project descriptions concise, but do not remove them when they help explain the work.
 - Respect reduced-motion settings when adding animation.
 - Keep responsive behavior explicit with stable aspect ratios and spacing.

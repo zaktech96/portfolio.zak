@@ -32,25 +32,25 @@ type ProofImage = {
 const impactLayers: VisualSignal[] = [
   {
     title: 'First impression',
-    detail: 'Interfaces that feel polished before the user reads.',
+    detail: 'Polished on sight.',
     icon: Sparkles,
     tone: 'border-cyan-400/25 bg-cyan-400/10 text-cyan-700 dark:text-cyan-200',
   },
   {
     title: 'Sales flow',
-    detail: 'Checkout, pricing, stock, and confirmation paths.',
+    detail: 'Checkout to confirmation.',
     icon: CreditCard,
     tone: 'border-violet-400/25 bg-violet-400/10 text-violet-700 dark:text-violet-200',
   },
   {
     title: 'Admin control',
-    detail: 'Orders, members, filters, refunds, and tracking.',
+    detail: 'Orders, refunds, tracking.',
     icon: ClipboardList,
     tone: 'border-amber-400/30 bg-amber-400/10 text-amber-700 dark:text-amber-200',
   },
   {
     title: 'Operational trust',
-    detail: 'Fulfilment, data state, feedback, and safer changes.',
+    detail: 'State, fulfilment, feedback.',
     icon: ShieldCheck,
     tone: 'border-emerald-400/25 bg-emerald-400/10 text-emerald-700 dark:text-emerald-200',
   },
@@ -130,11 +130,10 @@ const Capabilities = () => {
               Craft
             </p>
             <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-              Proof that the page is part of a product.
+              Proof behind the page.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-foreground/60 sm:text-lg">
-              Screens first. Then the flows behind them: checkout, auth, stock, admin control,
-              content, and smoother paths to growth.
+              Screens first. Systems underneath.
             </p>
           </motion.div>
 
@@ -200,10 +199,10 @@ const Capabilities = () => {
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                       Lead proof
                     </p>
-                    <h3 className="mt-1 text-2xl font-bold sm:text-3xl">Moncures as a real system</h3>
+                    <h3 className="mt-1 text-2xl font-bold sm:text-3xl">Moncures: live system</h3>
                   </div>
                   <p className="hidden max-w-sm text-sm leading-6 text-white/70 sm:block">
-                    Brand screen, sales path, admin control, and fulfilment in one product.
+                    Storefront, admin, fulfilment.
                   </p>
                 </div>
               </div>
@@ -250,7 +249,7 @@ const Capabilities = () => {
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/75">
                     Impact layers
                   </p>
-                  <h3 className="mt-2 text-2xl font-bold text-foreground">Less talk. Clear signals.</h3>
+                  <h3 className="mt-2 text-2xl font-bold text-foreground">Clear signals.</h3>
                 </div>
                 <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                   Product-led
@@ -285,14 +284,14 @@ const Capabilities = () => {
                   Before
                 </p>
                 <p className="mt-2 text-xl font-bold text-foreground">A page</p>
-                <p className="mt-2 text-sm leading-6 text-foreground/56">Looks good, but stops at presentation.</p>
+                <p className="mt-2 text-sm leading-6 text-foreground/56">Presentation only.</p>
               </div>
               <div className="rounded-lg border border-primary/25 bg-primary/[0.055] p-4 shadow-sm backdrop-blur">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/72">
                   After
                 </p>
                 <p className="mt-2 text-xl font-bold text-foreground">A product</p>
-                <p className="mt-2 text-sm leading-6 text-foreground/60">Users, payments, content, admin, and operations.</p>
+                <p className="mt-2 text-sm leading-6 text-foreground/60">Users, payments, admin.</p>
               </div>
             </div>
           </motion.div>

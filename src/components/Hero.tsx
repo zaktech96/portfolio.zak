@@ -2,9 +2,9 @@ import { ScrollIndicator } from './ui/scroll-indicator'
 
 const Hero = () => {
   const proofPoints = [
-    ['Live commerce', 'Storefront, checkout, stock, refunds'],
-    ['Admin systems', 'Orders, members, fulfilment, tracking'],
-    ['Growth work', 'Sharper flows, trust, and delivery judgment'],
+    ['Live commerce', 'Checkout + stock'],
+    ['Admin systems', 'Orders + fulfilment'],
+    ['Growth work', 'Sharper flows'],
   ]
 
   const launchRows = [
@@ -57,15 +57,15 @@ const Hero = () => {
               <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-primary/60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            UK-based full stack developer building impact-led products
+            Full stack product builder
           </div>
 
           <div className="mt-8 space-y-6">
             <h1 className="max-w-4xl text-balance text-5xl font-bold text-foreground sm:text-6xl lg:text-7xl">
-              Product builds with sharper journeys and real operating power.
+              Sharp interfaces. Real systems. Visible growth.
             </h1>
             <p className="max-w-2xl text-pretty text-lg leading-8 text-foreground/68 sm:text-xl">
-              I take ideas from first direction to launch-ready systems: customer journeys, backend flows, admin control, and practical improvements that make growth visible after launch.
+              From idea to launch-ready product: journeys, backend flows, admin control, and cleaner decisions.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ const Hero = () => {
                     <div>
                       <p className="text-sm font-semibold text-primary">Moncures</p>
                       <h2 className="mt-2 text-2xl font-bold text-foreground">
-                        Digital flagship plus backend control
+                        Storefront + admin control
                       </h2>
                     </div>
                     <span className="rounded-full border border-primary/25 bg-background/70 px-3 py-1 text-xs font-semibold text-primary">

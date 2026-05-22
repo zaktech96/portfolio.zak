@@ -13,10 +13,10 @@ const Contact = () => {
             Contact
           </p>
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
-            Build something that moves the product forward.
+            Build what moves the product.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-foreground/60">
-            Reach out for freelance builds, product work, or collaboration where design and backend execution both matter.
+            Freelance builds, product work, collaboration.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ const Contact = () => {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-foreground/50">
-            Available for freelance builds, product work, and collaboration.
+            Available for focused product builds.
           </p>
         </div>
       </div>

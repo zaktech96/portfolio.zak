@@ -7,7 +7,183 @@ import muslimTravelGuideImage from "./muslim-travel-guide.png";
 import visionboardImage from "./visionboard.png";
 import moncuresImage from "./moncures.png";
 import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, Layers3, Rocket, Sparkles, Workflow } from "lucide-react";
 // import barakahImage from "./barakah.png";
+
+type ProjectMessage = {
+  need: string;
+  build: string;
+  result: string;
+};
+
+type MotionPreference = boolean | null;
+
+const portfolioSignals = [
+  {
+    label: "Screens",
+    detail: "Trust at first glance",
+    icon: Sparkles,
+  },
+  {
+    label: "Systems",
+    detail: "Flows behind the UI",
+    icon: Workflow,
+  },
+  {
+    label: "Growth",
+    detail: "Clearer paths forward",
+    icon: Rocket,
+  },
+];
+
+const storySteps = [
+  {
+    label: "Need",
+    key: "need" as const,
+    icon: Sparkles,
+  },
+  {
+    label: "Build",
+    key: "build" as const,
+    icon: Layers3,
+  },
+  {
+    label: "Result",
+    key: "result" as const,
+    icon: Rocket,
+  },
+];
+
+const PortfolioSignalStrip = ({ shouldReduceMotion }: { shouldReduceMotion: MotionPreference }) => (
+  <motion.div
+    initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+    whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-80px" }}
+    transition={{ duration: 0.45, ease: "easeOut" }}
+    className="mb-8 grid gap-3 sm:mb-10 lg:grid-cols-3"
+  >
+    {portfolioSignals.map((signal, index) => {
+      const Icon = signal.icon;
+
+      return (
+        <div
+          key={signal.label}
+          className="group relative overflow-hidden rounded-lg border border-border/65 bg-card/50 p-4 shadow-sm backdrop-blur"
+        >
+          <div className="flex items-center gap-4">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-primary/15 bg-primary/10 text-primary">
+              <Icon className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-base font-semibold text-foreground">{signal.label}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/42">
+                {signal.detail}
+              </p>
+            </div>
+          </div>
+          <motion.span
+            initial={shouldReduceMotion ? false : { scaleX: 0 }}
+            whileInView={shouldReduceMotion ? undefined : { scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, delay: 0.08 + index * 0.08, ease: "easeOut" }}
+            className="absolute inset-x-4 bottom-0 h-px origin-left bg-primary/60"
+            aria-hidden="true"
+          />
+          {index !== portfolioSignals.length - 1 && (
+            <ArrowRight
+              className="absolute -right-3 top-1/2 hidden h-6 w-6 -translate-y-1/2 text-primary/55 lg:block"
+              aria-hidden="true"
+            />
+          )}
+        </div>
+      );
+    })}
+  </motion.div>
+);
+
+const ProjectStoryFlow = ({
+  message,
+  isFeatured,
+  shouldReduceMotion,
+}: {
+  message: ProjectMessage;
+  isFeatured: boolean;
+  shouldReduceMotion: MotionPreference;
+}) => (
+  <div className="grid gap-2 pt-1 sm:grid-cols-3">
+    {storySteps.map((step, index) => {
+      const Icon = step.icon;
+
+      return (
+        <motion.div
+          key={step.label}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.35, delay: Math.min(index * 0.05, 0.12), ease: "easeOut" }}
+          className={`relative overflow-hidden rounded-md border p-3 transition-all duration-300 hover:-translate-y-0.5 ${
+            isFeatured
+              ? "border-primary/15 bg-primary/[0.045]"
+              : "border-border/55 bg-background/40"
+          }`}
+        >
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.7 }}
+            whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.45, delay: 0.05 + index * 0.06, ease: "easeOut" }}
+            className="absolute -right-8 -top-8 h-20 w-20 rounded-full border border-primary/10 bg-primary/[0.035]"
+            aria-hidden="true"
+          />
+          <div className="flex items-center gap-2">
+            <span className="grid h-7 w-7 shrink-0 place-items-center rounded-md border border-border/60 bg-card/55 text-primary">
+              <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+            </span>
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-foreground/42">
+              {step.label}
+            </p>
+          </div>
+          <p className="mt-2 text-sm font-semibold leading-5 text-foreground/80">
+            {message[step.key]}
+          </p>
+          <motion.span
+            initial={shouldReduceMotion ? false : { scaleX: 0 }}
+            whileInView={shouldReduceMotion ? undefined : { scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, delay: 0.08 + index * 0.07, ease: "easeOut" }}
+            className="absolute inset-x-3 bottom-0 h-px origin-left bg-primary/55"
+            aria-hidden="true"
+          />
+        </motion.div>
+      );
+    })}
+  </div>
+);
+
+const TechStackIcons = ({ tech }: { tech: string[] }) => {
+  const visibleTech = tech.slice(0, 6);
+  const remaining = tech.length - visibleTech.length;
+
+  return (
+    <div className="flex flex-wrap items-center gap-2 pt-2">
+      {visibleTech.map((item) => (
+        <span
+          key={item}
+          title={item}
+          className="grid h-9 w-9 place-items-center rounded-full border border-border/60 bg-background/45 text-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/10"
+        >
+          <TechIcon name={item} />
+          <span className="sr-only">{item}</span>
+        </span>
+      ))}
+      {remaining > 0 && (
+        <span className="grid h-9 min-w-9 place-items-center rounded-full border border-border/60 bg-background/45 px-2 text-xs font-semibold text-foreground/60">
+          +{remaining}
+        </span>
+      )}
+    </div>
+  );
+};
 
 const TechIcon = ({ name }: { name: string }) => {
   switch (name) {
@@ -140,6 +316,11 @@ const Projects = () => {
       description:
         "Commerce storefront plus admin system for orders, members, stock, fulfilment, and refunds.",
       impact: ["Sales flow", "Admin OS", "Fulfilment", "Trust"],
+      message: {
+        need: "Launch trust",
+        build: "Commerce + admin",
+        result: "Operate live",
+      },
       tech: [
         "React",
         "TypeScript",
@@ -158,6 +339,11 @@ const Projects = () => {
       description:
         "SaaS workflow with auth, realtime data, subscriptions, AI chat, and email notifications.",
       impact: ["SaaS flow", "Auth", "Realtime", "AI"],
+      message: {
+        need: "SaaS clarity",
+        build: "Auth + realtime",
+        result: "Ready to scale",
+      },
       tech: [
         "React",
         "TypeScript",
@@ -176,6 +362,11 @@ const Projects = () => {
       description:
         "Quran listening and reading experience with clean navigation and recitation flow.",
       impact: ["Reading UX", "Audio", "Content", "Faith tool"],
+      message: {
+        need: "Focused reading",
+        build: "Audio + content",
+        result: "Calmer journey",
+      },
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
       image: quranImage,
       link: "https://quransphere.vercel.app/",
@@ -186,6 +377,11 @@ const Projects = () => {
       description:
         "Flight deal tracker focused on fast route search, filtering, and comparison.",
       impact: ["Search", "Filtering", "Travel UI", "Deals"],
+      message: {
+        need: "Find deals fast",
+        build: "Search + filters",
+        result: "Quicker compare",
+      },
       tech: ["React", "TypeScript", "Nextjs", "Tailwindcss"],
       image: discountFlightTrackerImage,
       link: "https://discount-flight-tracker.vercel.app/",
@@ -196,6 +392,11 @@ const Projects = () => {
       description:
         "Restaurant site built around menu discovery, brand feel, and ordering confidence.",
       impact: ["Brand", "Menu", "Local trust", "Mobile"],
+      message: {
+        need: "Local appetite",
+        build: "Menu + brand",
+        result: "Order confidence",
+      },
       tech: [
         "React",
         "TypeScript",
@@ -215,6 +416,11 @@ const Projects = () => {
       description:
         "Chauffeur booking flow with trip types, dynamic pricing, and checkout.",
       impact: ["Booking", "Pricing", "Checkout", "Mobile"],
+      message: {
+        need: "Book with ease",
+        build: "Pricing + checkout",
+        result: "Faster trips",
+      },
       tech: [
         "React",
         "TypeScript",
@@ -233,6 +439,11 @@ const Projects = () => {
       description:
         "Islamic travel tool for prayer times, Qibla, halal food, and mosque discovery.",
       impact: ["Prayer", "Qibla", "Discovery", "Community"],
+      message: {
+        need: "Travel with faith",
+        build: "Prayer + places",
+        result: "Useful companion",
+      },
       tech: [
         "React",
         "TypeScript",
@@ -252,6 +463,11 @@ const Projects = () => {
       description:
         "Visual planning tool for turning goals into boards, categories, and roadmaps.",
       impact: ["Planning", "Drag-drop", "Goals", "Templates"],
+      message: {
+        need: "Shape goals",
+        build: "Boards + templates",
+        result: "Plan visually",
+      },
       tech: [
         "React",
         "TypeScript",
@@ -299,9 +515,11 @@ const Projects = () => {
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-7 text-foreground/60 sm:text-lg lg:justify-self-end">
-            Screenshots show the interface. Impact chips show why each build mattered.
+            Screens, flows, and outcomes. Less reading, more signal.
           </p>
         </div>
+
+        <PortfolioSignalStrip shouldReduceMotion={shouldReduceMotion} />
 
         <div className="space-y-6 sm:space-y-8">
           {projects.map((project, index) => {
@@ -411,36 +629,32 @@ const Projects = () => {
                       <path d="m13 5 7 7-7 7" />
                     </svg>
                   </h3>
-                  <p className="text-foreground/64 text-sm leading-6 sm:text-base sm:leading-7 line-clamp-3">
+                  <p className="text-sm leading-6 text-foreground/62 sm:text-base sm:leading-7">
                     {project.description}
                   </p>
+                  <ProjectStoryFlow
+                    message={project.message}
+                    isFeatured={isFeatured}
+                    shouldReduceMotion={shouldReduceMotion}
+                  />
 
-                  <div className="grid gap-2 pt-2 sm:grid-cols-2">
+                  <div className="flex flex-wrap gap-2 pt-2">
                     {project.impact.map((outcome) => (
                       <div
                         key={outcome}
-                        className={`rounded-md border px-3 py-2 text-sm font-semibold ${
+                        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold ${
                           isFeatured
                             ? "border-primary/15 bg-primary/[0.055] text-foreground/72"
                             : "border-border/55 bg-background/40 text-foreground/62"
                         }`}
                       >
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
                         {outcome}
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 bg-background/45 border border-border/60 text-foreground/72 rounded-full text-xs sm:text-sm font-medium"
-                      >
-                        <TechIcon name={tech} />
-                        <span className="whitespace-nowrap">{tech}</span>
-                      </span>
-                    ))}
-                  </div>
+                  <TechStackIcons tech={project.tech} />
 
                   {(project.github || project.link) && (
                     <div className="flex flex-col gap-2 pt-2 sm:hidden">
